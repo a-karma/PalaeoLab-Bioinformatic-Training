@@ -1,1 +1,1 @@
-# PalaeoLab-Bioinformatic-Training
+# PalaeoLab Bioinformatic Training Course
