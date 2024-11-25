@@ -1,13 +1,13 @@
 # Bioinformatic training
 
-<img align="left" width="250" src=./IM/LabLogo.png alt="Lab-Logo" />
+<img align="left" width="300" src=./IM/LabLogo.png alt="Lab-Logo" />
 Next-generation sequencing platforms have allowed researchers to generate genomic data from multiple individuals at an affordable cost. 
 Generating and analysing genome wide information from endangered populations can greatly assist population management. 
 Manipulating genomic data, obtained from n, however, requires a set of skills in bioinformatics that often prove to be a major barrier. In this workshop you will learn  in next-generation sequencing data analysis for conservation
 <br clear="left"/>
 
 ## Module 1 - Basic concepts of command line programing
-In this module we will lay the fundations for 
+In this module we will lay the fundations for the entire course. 
 
 #### Session 1
 - Accessing cloud server (ssh)
@@ -22,8 +22,8 @@ In this module we will lay the fundations for
 - Introduction to conda
 
 
-## Day 2 - Overview
-NGS data preparation for genomic analyses.
+## Module 2 - NGS data preparation for genomic analyses
+
 
 #### Session 1
 - Introduction to commonly used bioinformatic file formats
