@@ -1,9 +1,9 @@
 # Bioinformatic training
 
 <img align="left" width="300" src=./IM/LabLogo.png alt="Lab-Logo" />
-Next-generation sequencing platforms have allowed researchers to generate genomic data from multiple individuals at an affordable cost. 
-Generating and analysing genome wide information from endangered populations can greatly assist population management. 
-Manipulating genomic data, obtained from n, however, requires a set of skills in bioinformatics that often prove to be a major barrier. In this workshop you will learn  in next-generation sequencing data analysis for conservation
+Next-generation sequencing platforms have allowed researchers to generate whole-genome data from multiple individuals at an affordable cost while the optimization of extraction and library preparation protocols tailored for short and degraded DNA fragments have granted us the ability of retrieving genomic information from ancient remains. 
+These technological advancements have revolutionized the fields of Evolutionary and Conservation genetics by enabling researchers to track genetic and demographic changes through time at an unprecedented level of detail. Ancient DNA (aDNA) research have not only dramatically changed our understanding of the speciation and domestication processes but also provided new insight on the complex evolutionary history of our species. Manipulating and analysing genomic data, however, requires a set of skills in bioinformatics that often prove to be a major barrier. 
+In this course you will learn how to process and analyse next-generation sequencing data 
 <br clear="left"/>
 
 ## Module 1 - Basic concepts of command line programing
