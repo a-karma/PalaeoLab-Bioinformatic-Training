@@ -1,7 +1,6 @@
 # PalaeoLab Bioinformatic Training Course
 
-<img align="left" width="250" src=./IM/LabLogo.png alt="Lab-Logo" />
-Next-generation sequencing platforms have allowed researchers to generate whole-genome data from multiple individuals at an affordable cost while the optimization of extraction and library preparation protocols tailored for short and degraded DNA fragments have granted us the ability of retrieving genomic information from ancient remains.
+<img align="left" width="250" src=./IM/LabLogo.png alt="Lab-Logo" /> Next-generation sequencing platforms have allowed researchers to generate whole-genome data from multiple individuals at an affordable cost while the optimization of extraction and library preparation protocols tailored for short and degraded DNA fragments have granted us the ability of retrieving genomic information from ancient remains.
   
 These technological advancements have revolutionized the fields of Evolutionary and Conservation genetics by enabling researchers to track genetic and demographic changes through time at an unprecedented level of detail. Ancient DNA (aDNA) research have not only dramatically changed our understanding of the speciation and domestication processes but also provided new insight on the complex evolutionary history of our species.
 
