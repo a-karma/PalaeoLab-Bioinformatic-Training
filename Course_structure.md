@@ -1,5 +1,5 @@
 # Bioinformatic training
-![bg left](./IM/LabLogo.png)
+<img align="right" src=./IM/LabLogo.png alt="Lab-Logo" />
 Generating and analysing genome wide information from endangered populations can greatly assist population management. 
 Manipulating genomic data, obtained from next-generation sequencing platforms, however, requires a set of skills in bioinformatics that often prove to be a major barrier. In this workshop you will learn  in next-generation sequencing data analysis for conservation
 
