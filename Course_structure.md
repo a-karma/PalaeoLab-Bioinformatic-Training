@@ -1,12 +1,14 @@
 # Bioinformatic training
 
 <img align="left" width="250" src=./IM/LabLogo.png alt="Lab-Logo" />
+Next-generation sequencing platforms have allowed researchers to generate genomic data from multiple individuals at an affordable cost. 
 Generating and analysing genome wide information from endangered populations can greatly assist population management. 
-Manipulating genomic data, obtained from next-generation sequencing platforms, however, requires a set of skills in bioinformatics that often prove to be a major barrier. In this workshop you will learn  in next-generation sequencing data analysis for conservation
+Manipulating genomic data, obtained from n, however, requires a set of skills in bioinformatics that often prove to be a major barrier. In this workshop you will learn  in next-generation sequencing data analysis for conservation
 <br clear="left"/>
 
-## Day 1 - Overview
-Basic concepts of command line programing.
+## Module 1 - Basic concepts of command line programing
+In this module we will lay the fundations for 
+
 #### Session 1
 - Accessing cloud server (ssh)
 - Command Line Interface
