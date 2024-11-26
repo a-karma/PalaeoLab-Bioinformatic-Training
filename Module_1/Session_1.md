@@ -2,7 +2,7 @@
 
 # Module 1 - -Session 1
 
-### 2. The filesystem 
+### 1. The filesystem 
 This section outlines the basic commands for navigating file systems and creating a structured directory hierarchy for research projects. The naming of files and directories is more crucial than you might realize; a clear and consistent structure will significantly streamline your workflow, especially when dealing with complex projects and pipelines. While you can adapt and customize this template structure to your specific needs, adhering to these principles will greatly enhance project organization and accessibility.
 
 We will start with creating a parent directory for our project. 
@@ -142,7 +142,7 @@ If you now run the `tree` command from the project_bash directory, you should ge
 
 ![File-system-structure](../IM/bash_tree.png)
 
-### 3. Regular expressions & file manipulations
+### 2. Regular expressions & file manipulations
 In this section we are going to apply what we already know about variables, conditional and loops to explore text files. 
 We will mostly focus on file manipulation using regular expressions, using `grep`, `sed` and `awk`.
 
@@ -312,5 +312,3 @@ Here we used the -V option because we are dealing with a mixture of numerical an
 > Use the commands you have learn to find out   
 
 We will have more information about `BED` files in the next session.
-
-If you are finished early you can also run through these tutorials for more practice: 1) https://sandbox.bio/tutorials?id=terminal-basics 2) https://sandbox.bio/tutorials?id=awk-intro
