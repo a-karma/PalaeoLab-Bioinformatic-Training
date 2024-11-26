@@ -15,7 +15,8 @@ The vast majority of genomic analyses require large computational resources way 
 ### 2. Preliminary set up
 Given that the cloud server is UNIX based and that almost all bioinformatics procedures are conducted via CLI, it is important that you familiarise yourself with it before starting the course. Although we will cover some of the basic concepts of file system structure and shell scripting in this module, if you have never worked from a terminal before we highly recommend you to go through this introductory courses:
 
-https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html
+- https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html
+- https://sandbox.bio/tutorials?id=terminal-basics
 
 
 
