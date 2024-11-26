@@ -79,7 +79,7 @@ In this module we will lay the fundations for the entire course.
 - Detecting admixture
 - Quatifying admixture proportions.
 
-## Module 6 - eDNA & 
+## Module 6 - eDNA & Metagenomics
 #### Session 2
 - add some content here please
 - two or three bullet point will suffice
