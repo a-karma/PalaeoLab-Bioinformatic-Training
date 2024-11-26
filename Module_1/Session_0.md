@@ -2,7 +2,7 @@
 
 ## Module 1 - Basic concepts of command line programming - Session 0
 
-The vast majority of genomic analyses require large computational resources way beyond the computing power of a standard laptop. Therefore, we have generated a virtual cloud computer with all the software and the data necessary for the course. You'll need to connect to this server via a `Secure SHell protocol` (ssh), and you’ll run all the commands directly in a terminal. This section provides you with some essential definitions and outlines the procedure for establishing a connection to our cloud server. 
+The vast majority of genomic analyses require large computational resources way beyond the computing power of a standard laptop. Therefore, we have generated a virtual cloud computer with all the software and the data necessary for the course. You'll need to connect to this server via a `Secure SHell` protocol (ssh), and you’ll run all the commands directly in a terminal. This section provides you with some essential definitions and outlines the procedure for establishing a connection to our cloud server. 
 
 ### 1. Preliminary Definitions
 - The `OS` (short for Operating System) is the program that manages all other applications in a computer. Windows, Linux and macOS are all examples of Operating Systems. Users can interact directly with the operating system through an interface, such as a command-line interface (CLI) or a graphical user interface (GUI).
