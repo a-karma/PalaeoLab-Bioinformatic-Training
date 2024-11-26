@@ -3,7 +3,7 @@
 ## Module 1 - Basic concepts of command line programming - Session 0
 
 ### 1. Working from terminal and remote servers
-In this section, we will outline the procedure for connecting to our cloud server and provide you with some essential preliminary definitions. 
+In this section, we will outline the procedure for connecting to our cloud server and provide you with some essential definitions. 
 
 - The `OS` (short for Operating System) is the program that manages all other applications in a computer. Windows, Linux and macOS are all examples of Operating Systems. Users can interact directly with the operating system through an interface, such as a command-line interface (CLI) or a graphical UI (GUI).
 - A `shell` is a text-based command-line interpreter or a program that allows the user to execute commands and interact with the OS. Different operating systems have different shell programs, here we will focus on Bash (Bourne Again SHell) which is the most common shell on Unix-like systems.
