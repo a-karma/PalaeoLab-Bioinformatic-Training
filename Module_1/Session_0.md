@@ -16,7 +16,7 @@ In this section, we will outline the procedure for connecting to our cloud serve
 ##### Windows Users
 In the guide we've sent you, you've seen how to install putty and how to connect to our cloud server using this program. 
  - open the putty app
- - under the Saved Session box, click on `Bogor_Workshop` then on the `Open` button.
+ - under the Saved Session box, click on `PalaeoLab` then on the `Open` button.
  - In the terminal window type your user_ID and press enter
  - You should be now asked for the key-passphrase, please type it and press enter
 
@@ -24,6 +24,6 @@ In the guide we've sent you, you've seen how to install putty and how to connect
 Please open a terminal and then run:
 
 ```sh
-ssh -i ./.ssh/workshop_key -l user_ID 138.246.238.65
+ssh -i ./.ssh/palaeolab_key -l user_ID 138.246.238.65
 ```
 where user_ID needs to be replaced by the credentials we sent you.
