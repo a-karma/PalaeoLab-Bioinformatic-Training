@@ -1,4 +1,4 @@
-![bio_logo](../IM/header.png)
+![bio_logo](./IM/header.png)
 
 
 ## Module 1 - Basic concepts of command line programing
