@@ -4,20 +4,25 @@
 ## Module 1 - Basic concepts of command line programing
 In this module we will lay the fundations for the entire course. 
 
-#### Session 1
+#### Session 0
+- Preliminary definitions
 - Accessing cloud server (ssh)
 - Command Line Interface
+
+#### Session 1
 - File System Structure
 - Manipulating text files
 
 #### Session 2
 - Variables and arguments
 - Shell Scripting
+
+#### Session 3
 - Transferring files (sftp)
 - Introduction to conda
 
 
-## Module 2 - NGS data preparation for genomic analyses
+## Module 2 - NGS data preparation
 
 
 #### Session 1
@@ -33,8 +38,7 @@ In this module we will lay the fundations for the entire course.
 - Parallelization strategies
 - Variant calling
 
-## Day 3 - Overview
-Analysing genetic variation.
+## Module 3 - Analysing genetic variation
 
 #### Session 1
 - Understanding the .vcf file
@@ -52,8 +56,7 @@ Analysing genetic variation.
 - Using R to visual PCA and ADMIXTURE results
 - Discussion of Babirusa population structure
 
-## Day 4 - Overview
-Demographic analysis, inbreeding & load.
+## Module 4 - Demographic analysis, inbreeding & load.
 
 #### Session 1
 - Prepping input files for PSMC
@@ -69,14 +72,14 @@ Demographic analysis, inbreeding & load.
 - Using R to plot mutational load per area
 - Discussion of burden of mutation in different areas
 
-## Day 5 - Overview
-Advanced population genetics & Metabarcoding for biodiversity.
+## Module 5 - Advanced population genetics
 
 #### Session 1
 - Introduction to f-statistics
 - Detecting admixture
 - Quatifying admixture proportions.
 
+## Module 6 - eDNA & 
 #### Session 2
 - add some content here please
 - two or three bullet point will suffice
