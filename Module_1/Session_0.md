@@ -1,6 +1,6 @@
 ![bio_logo](../IM/header.png)
 
-# Module 1 - Basic concepts of command line programming - Session 0
+## Module 1 - Basic concepts of command line programming - Session 0
 
 ### 1. Working from terminal and remote servers
 In this section, we will outline the procedure for connecting to our cloud server and provide you with some essential preliminary definitions. 
