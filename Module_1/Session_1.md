@@ -16,7 +16,8 @@ The first command (`mkdir`) creates the required folder while the `cd` command i
 mkdir scripts; mkdir raw_data; mkdir results
 ```
 note the use of the semicolon (;) to separate different commands on the same line.
-> `Tip`: never use white spaces when naming files or directories
+> [Tip]
+> Never use white spaces when naming files or directories
 
 Then, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming
 convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
