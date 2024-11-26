@@ -1,4 +1,4 @@
-<img align="left" width="100" hspace="10" src=../IM/LabLogo.png alt="Lab-Logo" /> # PalaeoLab Bioinformatic Training
+![bio_logo](../IM/header.png)
 
 ## Module 1 - Basic concepts of command line programming - Session 0
 
