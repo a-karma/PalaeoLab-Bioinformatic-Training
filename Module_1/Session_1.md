@@ -1,6 +1,6 @@
 ![bio_logo](../IM/header.png)
 
-# Module 1 - -Session 1
+## Module 1 - Basic concepts of command line programming - Session 1
 
 ### 1. The filesystem 
 This section outlines the basic commands for navigating file systems and creating a structured directory hierarchy for research projects. The naming of files and directories is more crucial than you might realize; a clear and consistent structure will significantly streamline your workflow, especially when dealing with complex projects and pipelines. While you can adapt and customize this template structure to your specific needs, adhering to these principles will greatly enhance project organization and accessibility.
