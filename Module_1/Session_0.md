@@ -31,28 +31,29 @@ If insyead you are a Windows user you have essentially three alternatives:
 - install a linux sub-system: https://ubuntu.com/desktop/wsl
 
 > [!NOTE]
-> Although both virtual machine and linux sub-system offer a much wider range of functionalities, for the purpose of this course we recommend you install `PuTTY` if possible and we have prepared a short step-by-step guide available upon request.  
+> Although both virtual machine and linux sub-system offer a much wider range of functionalities, for the purpose of this course we recommend you install `PuTTY` if possible and we have prepared a short step-by-step guide to set it up which is available upon request.  
 
-In order to visualize some of the results you will also need to install R. Unfortunately we don't have yet a crash course that covers  
-the basics of R, thus, if you are not familiar with it, we recommend
-First everyone needs to download and install the most up to date versions of R and Rstudio on
-your laptop:
+In order to visualize some of the results you will also need to install the most up to date versions of R and Rstudio on your laptop:
+
 Rstudio website: https://posit.co/download/rstudio-desktop/
+
 If you need help for the installation you can follow this video:
+
 Rstudio installation: https://www.youtube.com/watch?v=TFGYlKvQEQ4
-If you are completely new to R, we would recommend you go through this video before the
-workshop: https://www.youtube.com/watch?v=BvKETZ6kr9Q
-Extra material: Reference for data visualisation with R
-https://r4ds.had.co.nz/data-visualisation.html
-Last week we sent you the instructions for installing and setting up R and RStudio. There are
-now a few packages that you need to install for the practical sessions. Could you please try to
-install the following packages - via the command install.packages(“package_name”):
+
+After installing and setting up R and RStudio you will need to install a few packages for the practical sessions. Please try to
+install the following packages - via the command `install.packages(“package_name”)`:
 - tidyverse
 - ggplot2
 - reshape2
 - Rcolourbrewer
 - dplyr
 
+Unfortunately we don't have yet a crash course that covers the basics of R, thus, if you are completely new to it, you might want to have a look at this online resources:
+
+- Short introduction to R and Rstudio: https://www.youtube.com/watch?v=BvKETZ6kr9Q
+- Reference for data visualisation with R: https://r4ds.had.co.nz/data-visualisation.html
+- Great and very complete R tutorial: https://www.w3schools.com/r/
 
 ### 4. Connecting to the cloud server
 ##### Windows Users
