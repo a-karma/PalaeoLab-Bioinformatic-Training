@@ -18,7 +18,8 @@ Given that the cloud server is UNIX based and that almost all bioinformatics pro
 - https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html
 - https://sandbox.bio/tutorials?id=terminal-basics
 
-[!NOTE] Both courses can be done using only a web browser.
+> [!NOTE]
+> Both courses can be done using only a web browser.
 
 ### 3. Connecting to the cloud server
 ##### Windows Users
