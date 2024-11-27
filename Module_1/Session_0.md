@@ -31,7 +31,7 @@ If insyead you are a Windows user you have essentially three alternatives:
 - install a linux sub-system: https://ubuntu.com/desktop/wsl
 
 > [!NOTE]
-> Although both virtual machine and linux sub-system offer a much wider range of functionalities, for the purpose of this course we recommend you install `PuTTY` if possible and we have prepared a short step-by-step guide to set it up which is available upon request.  
+> Although both virtual machine and linux sub-system offer a much wider range of functionalities, for the purpose of this course we recommend you install `PuTTY`. We also have prepared a step-by-step guide to set it up which is available upon request.  
 
 In order to visualize some of the results you will also need to install the most up to date versions of R and Rstudio on your laptop:
 
