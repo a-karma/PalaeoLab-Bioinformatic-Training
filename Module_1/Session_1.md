@@ -10,14 +10,18 @@ We will start with creating a parent directory for our project.
 mkdir project_bash
 cd project_bash
 ```
-The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the new directory. Now we need to create one directory where we are going to store our scripts, one for the raw data, and one for our results:
+The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the new directory. 
+
+> [!Tip]
+> Never use white spaces when naming files or directories
+
+Now we need to create one directory where we are going to store our scripts, one for the raw data, and one for our results:
 
 ```sh
 mkdir scripts; mkdir raw_data; mkdir results
 ```
-note the use of the semicolon (;) to separate different commands on the same line.
-> [!Tip]
-> Never use white spaces when naming files or directories
+>[!NOTE]
+> Use the semicolon (;) to separate different commands on the same line.
 
 Then, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming
 convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
