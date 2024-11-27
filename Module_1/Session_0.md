@@ -2,7 +2,7 @@
 
 ## Module 1 - Basic concepts of command line programming - Session 0
 
-The vast majority of genomic analyses require large computational resources way beyond the computing power of a standard laptop. Therefore, we have generated a virtual cloud computer with all the software and the data necessary for the course. You'll need to connect to this server via a `Secure SHell` protocol (ssh), and you’ll run all the commands directly in a terminal. This section provides you with some essential definitions and outlines the procedure for establishing a connection to our cloud server. 
+The vast majority of genomic analyses require large computational resources way beyond the computing power of a standard laptop. Therefore, we have generated a virtual cloud computer with all the software and the data necessary for the course. This section provides you with some essential definitions and outlines the procedure for establishing a connection to our cloud server. 
 
 ### 1. Preliminary Definitions
 - The `OS` (short for Operating System) is the program that manages all other applications in a computer. Windows, Linux and macOS are all examples of Operating Systems. Users can interact directly with the operating system through an interface, such as a command-line interface (CLI) or a graphical user interface (GUI).
@@ -13,7 +13,7 @@ The vast majority of genomic analyses require large computational resources way 
 - A `script` is a series of instructions that automate computer tasks  Here we will focus on shell-scripting meaning executable files interpreted by the shell. 
 
 ### 2. Pre-course work
-Given that the cloud server is UNIX based and that almost all bioinformatics procedures are conducted via CLI, it is important that you familiarise yourself with it before starting the course. Although we will cover some of the basic concepts of file system structure and shell scripting in this module, if you have never worked from a terminal before we highly recommend you to go through this introductory courses:
+Given that the cloud server is UNIX based and that almost all bioinformatics procedures are conducted via CLI, it is important that you familiarise yourself with it before starting the course. Although we will cover some of the basic concepts of file system structure and shell scripting in this module, if you have never worked from a terminal before we highly recommend you to go through these introductory courses:
 
 - https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html
 - https://sandbox.bio/tutorials?id=terminal-basics
@@ -22,9 +22,19 @@ Given that the cloud server is UNIX based and that almost all bioinformatics pro
 > Both courses can be done using only a web browser.
 
 ### 3. Setting up your local machine
-As we only have a week and a lot of material to cover, unfortunately we will not be able to cover
-the basics of R. This is a program we use, mainly for the visualisation of the results. For those of
-you who are not familiar with R, it would be very useful to have a go before we all get together.
+As mentioned above, you don't need to install any bioinformatic software on your local machine because those will be already available on our server and you'll run all necessary commands directly in a terminal. Depending on the OS installed on your computer though you might need to download and install some programs that will allow you to establish a connection to our cloud via a `Secure SHell` protocol (ssh). The ssh protocol and the access to terminal are immediate for linux and macOS user so if you have either of these OS installed on your computer you don't need anything else. 
+
+If insyead you are a Windows user you have essentially three alternatives:
+
+- install PuTTY: https://www.putty.org/
+- install a virtual machine: https://www.virtualbox.org/
+- install a linux sub-system: https://ubuntu.com/desktop/wsl
+
+> [!NOTE]
+> Although both virtual machine and linux sub-system offer a much wider range of functionalities, for the purpose of this course we recommend you install `PuTTY` if possible and we have prepared a short step-by-step guide available upon request.  
+
+In order to visualize some of the results you will also need to install R. Unfortunately we don't have yet a crash course that covers  
+the basics of R, thus, if you are not familiar with it, we recommend
 First everyone needs to download and install the most up to date versions of R and Rstudio on
 your laptop:
 Rstudio website: https://posit.co/download/rstudio-desktop/
