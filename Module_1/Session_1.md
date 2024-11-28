@@ -25,11 +25,21 @@ mkdir scripts; mkdir raw_data; mkdir RaSuLts
 > Use the semicolon (;) to separate different commands on the same line.
 
 To assure yourself that all directories have been created you can use the command `ls` which lists the content of the current directory.
+
 Do you notice anything strange? 
-The word `results` is misspellt and the directory name is written in a mix of upper and lower case letters. Let's fix this!
 
+The word `results` is misspelt and the directory name is written in a mix of upper and lower case letters. Let's fix this!
 
-Then, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
+One option is to delete the folder and create a new one with the correct name. You can achieve this by running:
+```sh
+rm -r RaSuLts
+mkdir results
+```
+A second possibility is to move the directory and its content to a new directory with the correct name:
+```sh
+mv RaSuLts results
+```
+Now that we have corrected our mistake we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
 
 ```sh
 for i in $(seq 3)
