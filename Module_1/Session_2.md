@@ -250,40 +250,5 @@ cat ./results/ptw_prom_sequences.fa | head -1
 > Combine the intersect and flank functions in order to filter the `snp_ch30.bed` file
 > by excluding CDS and all regions that are 5 kb from the start and the stop codon of each CDS.
 
-### 3. Transferring files
-We conclude today's tutorials with some basic commands to transfer files between you local machime and our server.
-You can download or upload files using the Secure File Transfer Protocol (SFTP) which essentially creates a secure connection between your laptop and the cloud server.
-
-##### Windows Users
-In the guide we've sent you, you've seen how to install putty and how to connect to our cloud server using this program. 
-You are going to use a different component of putty to open an sftp connection. In the search bar please type 'PSFTP'.
- - open the PSFTP app like in figure
- - In the terminal window type `open Bogor_Workshop` 
- - You should be now asked to insert the log-in name, please insert your user_ID
- - Finally you should be asked for your key-passphrase, please type the same one you have use for ssh connection and press enter
-
-![psftp](../IM/psftp.png)
-
-##### Linux & macOS user
-Please open a terminal and then run:
-
-```sh
-sftp -i ./.ssh/workshop_key user_ID@138.246.238.65
-```
-where user_ID needs to be replaced by the credentials we sent you.
-
-##### Commonly used sftp commands
-After establyshing an sftp connection you can use `lcd` to change directory on your local machine while you can use the standard `cd` command
-to navigate the cloud server file system. 
-
-In order to upload a file on the server simply type:
-```sh
-put file_name
-```
-If instead you want to download a file from the server use:
-```
-get file_name
-```
-To close the sftp connection, simply type `bye`
 
 If you finished early and you want to keep playing with bedtools have a look at this tutorial here: https://sandbox.bio/tutorials?id=bedtools-intro
