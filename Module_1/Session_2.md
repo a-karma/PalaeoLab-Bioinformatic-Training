@@ -14,9 +14,9 @@ Note the use of `;`, which allows to run multiple commands in short succession.
 
 > Exercise 1
 >
-> Create a symbolic link between the `/home/DATA/Day_1` folder and your newly created `raw_data` directory 
+> Create a symbolic link between the `/home/DATA/module_1` folder and your newly created `raw_data` directory 
 
-If you now move into your raw_data directory and run `ls Day_1` you should see two files having the `.txt` extension, namely:
+If you now move into your raw_data directory and run `ls module_1` you should see two files having the `.txt` extension, namely:
 ```sh
 instructors_list.txt
 participants_list.txt
@@ -29,31 +29,31 @@ Unfortunately, the fields are not well defined because each word is separated by
 First of all we need to separate the last two fields (affiliation and status) from the instructors' names.
 We can do this in `awk` and make use of variable `NF` (number of fields variable) which is set to the total number of fields in the input record:
 ```sh
-awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/Day_1/instructors_list.txt
+awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/module_1/instructors_list.txt
 ```
 Now let's redirect the output to a file:
 ```sh
-awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/Day_1/instructors_list.txt > ~/session2/raw_data/aff_status.txt
+awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/module_1/instructors_list.txt > ~/session2/raw_data/aff_status.txt
 ```
 Tabs allow for consistent indentation across different file viewers and analysis tools. Each tab represents a single logical level of indentation, making the alignment structure more apparent and easier to interpret. Tabs are also more compatible with automation tools and scripts used for sequence analysis and manipulation. Many software programs and scripts expect tab-delimited alignment files, and using tabs avoids potential compatibility issues or the need for manual formatting adjustments.
 
 Let's now deal with the names. Given that we don't know how many words each names consit of, we should start by printing all but the last two fields of the original input file:
 
 ```sh
-awk 'NF-=2 {print $0}'  ~/session2/raw_data/Day_1/instructors_list.txt
+awk 'NF-=2 {print $0}'  ~/session2/raw_data/module_1/instructors_list.txt
 ```
 
 Then we can pipe this into `sed` and replace all white spaces with the character `_`:
 
 ```
-awk 'NF-=2 {print $0}'  ~/session2/raw_data/Day_1/instructors_list.txt | sed -e 's/ /_/g'
+awk 'NF-=2 {print $0}'  ~/session2/raw_data/module_1/instructors_list.txt | sed -e 's/ /_/g'
 ```
 Note the use of the `g` at the end of the substitution command. The use of `g` means that sed will now change all matching space into a _.
 
 Finally we redirect the output to a file:
 
 ```
-awk 'NF-=2 {print $0}'  ~/session2/raw_data/Day_1/instructors_list.txt | sed -e 's/ /_/g' > ~/session2/raw_data/names.txt
+awk 'NF-=2 {print $0}'  ~/session2/raw_data/module_1/instructors_list.txt | sed -e 's/ /_/g' > ~/session2/raw_data/names.txt
 ```
 
 Now that we have created these two intermediate files we can stitch them together to reconstruct the initial information correctly formatted:
@@ -80,8 +80,8 @@ Now let's use nano to edit our script and add this code-block to its content:
 
 ```sh
 #!/usr/bin/bash
-awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/Day_1/instructors_list.txt > aff_status.txt
-awk 'NF-=2 {print $0}' ~/session2/raw_data/Day_1/instructors_list.txt | sed -e 's/ /_/g' > names.txt
+awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/module_1/instructors_list.txt > aff_status.txt
+awk 'NF-=2 {print $0}' ~/session2/raw_data/module_1/instructors_list.txt | sed -e 's/ /_/g' > names.txt
 paste names.txt aff_status.txt >  ~/session2/results/corrected_instructors_list.tsv
 ```
 
@@ -92,7 +92,7 @@ Let's modify it to allow for more flexibility in the usage by transforming input
 ```sh
 #!/usr/bin/bash
 
-INPUT_FILE=~/session2/raw_data/Day_1/instructors_list.txt
+INPUT_FILE=~/session2/raw_data/module_1/instructors_list.txt
 OUTPUT_FILE=~/session2/results/corrected_instructors_list.txt
 
 awk '{print $(NF-1),"\t",$NF}' $INPUT_FILE > aff_status.txt
@@ -122,7 +122,7 @@ rm aff_status.txt
 now we can execute the script from the `session 2` directory and provide the correct input and output at the call:
 
 ```sh
-./scripts/formatting.sh ./raw_data/Day_1/instructors_list.txt ./results/corrected_instructors_list.txt
+./scripts/formatting.sh ./raw_data/module_1/instructors_list.txt ./results/corrected_instructors_list.txt
 ```
 
 > Exercise 1
@@ -186,7 +186,7 @@ bedtools --help
 
 Hurray! Now that bedtools is accessible let's see what we can do with it.
 
-The `snp_ch30.bed` file in the folder `/home/DATA/Day_1/` is an example of a "customized" bed format. It contains the three mandatory fields (chromosome, start, end) plus an unusual 4th field. In that column I have stored the genotype of 4 individuals at that position. If the 4 th column has a lowercase `m`, that particular site is monomorphic.
+The `snp_ch30.bed` file in the folder `/home/DATA/module_1/` is an example of a "customized" bed format. It contains the three mandatory fields (chromosome, start, end) plus an unusual 4th field. In that column I have stored the genotype of 4 individuals at that position. If the 4 th column has a lowercase `m`, that particular site is monomorphic.
 You can have a look at it using `less` or inspect just three lines with a combination of head and tail, see for example what you get by running:
 
 ```
