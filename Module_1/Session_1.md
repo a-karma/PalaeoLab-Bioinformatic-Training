@@ -53,7 +53,12 @@ nano what_i_did.txt
 ```
 After editing the file you can then press `Ctrl X` to close the editor and press `enter` to save the changes.
 
+> `Exercise 1`
+>
+> log all the command you have run so far in your `what_i_did.txt` file
 
+### 2. Conditionals and Loops
+Any algoritmic procedure consists of a series of instructions that need to be performed in a given order.   (usually sequentially but some times in parallel) 
 we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
 
 ```sh
@@ -105,7 +110,7 @@ done < dir_list.txt
 
 The `$` sign preceding the variable named `line` is crucial in this context because it indicates that we are referencing the actual value stored in the variable, rather than the variable name itself. During each iteration of the loop, the `read` command reads a line from the `dir_list.txt` file and assigns its content to the `line` variable. Finally the command `touch` uses the content of the variable `$line` to create a `what_i_did.txt` file inside the right directory.
 
-> `Exercise 1`
+> `Exercise 2`
 >
 > use a similar while loop to create a sub-directory called `output` inside each stage directory
 
@@ -133,7 +138,7 @@ ls raw_data
 ```
 The first command is just to populate the `raw_data` folder with a file (`input_zero.txt`). By running the second command you should see that an `input` folder has been created via the `ln` command. Now the `stage_1` directory contains all three elements required. The output of the third and fourth commands should be just `input_zero.txt`.
 
-> `Exercise 2`
+> `Exercise 3`
 >
 > Use the ln command to complete our file system structure
 > by linking each `stage_{i}/output` to an input folder inside the `stage_{i+1}` directory.
