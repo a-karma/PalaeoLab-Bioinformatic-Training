@@ -2,7 +2,7 @@
 ## Module 1 - Basic concepts of command line programming - Session 2
 In this session we are going to apply what we already know about variables, conditional and loops to explore text files, manipulate them and write our first script.
 ### 1. Regular expressions & file manipulations
-In this first section we will mostly focus on file manipulation using regular expressions, and we will introduce three fundamental tools: `grep`, `sed` and `awk`.
+In this first section we will mostly focus on regular expressions, and we will introduce three fundamental tools: `grep`, `sed` and `awk`.
 
 Regular expressions, also known as regex or regexp, are a powerful tool for manipulating text. They allow you to search for, extract, and modify patterns in text data. In Bash scripting, regular expressions are particularly useful for processing text files and automating tasks that involve text manipulation.
 
