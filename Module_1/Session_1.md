@@ -18,7 +18,7 @@ The first command (`mkdir`) creates the required folder while the `cd` command i
 Now we need to create one directory where we are going to store our scripts, one for the raw data, and one for our results:
 
 ```sh
-mkdir scripts; mkdir raw_data; mkdir results
+mkdir scripts; mkdir raw_data; mkdir ReSuLtS
 ```
 To assure yourself that all directories have been created you can use the command `ls` which lists the content of the current directory.
 >[!NOTE]
