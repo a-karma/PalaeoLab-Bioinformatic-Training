@@ -88,7 +88,7 @@ In principles, you could navigate to the each stage directory using the `cd` com
 ```sh
 ls -d stage* > dir_list.txt
 ```
-Note the use of the `>`. This symbol in bash has a special meaning: redirect the output of the command that precedes it to a file.
+Here the `-d` option modifies the behaviour of the command `ls` and forces it to list only directories. Note the word `stage*` after the `-d` flag: this restricts our list of directories to those that are termed `stage` followed by any other character (`*`). Lastly, note the use of the `>`. This symbol in bash has a special meaning: redirect the output of the command that precedes it to a file.
 
 Now that we have the list, we can easily implement another type of loop using the reserved word `while`:
 ```sh
@@ -98,7 +98,7 @@ touch $line/what_i_did.txt
 done < dir_list.txt
 ```
 
-The `$` sign preceding the variable named `line` is crucial in this context because it indicates that we are referencing the actual value stored in the variable, rather than the variable name itself. During each iteration of the loop, the read command reads a line from the `dir_list.txt` file and assigns it to the `$line` variable.
+The `$` sign preceding the variable named `line` is crucial in this context because it indicates that we are referencing the actual value stored in the variable, rather than the variable name itself. During each iteration of the loop, the `read` command reads a line from the `dir_list.txt` file and assigns its content to the `line` variable. Finally the command `touch` uses the content of the variable `$line` to create a `what_i_did.txt` file inside the right directory.
 
 > `Exercise 1`
 >
