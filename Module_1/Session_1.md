@@ -12,7 +12,7 @@ cd project_bash
 ```
 The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the newly created directory (`project_bash`). To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
 
-> [!Tip]
+> [!IMPORTANT]
 > Never use white spaces when naming files or directories
 
 Now we need to create one directory where we are going to store our scripts, one for the raw data, and one for our results:
@@ -39,7 +39,22 @@ A second possibility is to move the directory (and its content) to a new directo
 ```sh
 mv RaSuLts results
 ```
-Now that we have corrected our mistake, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
+Now that we have corrected our mistake, we can start populating our directories. Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
+
+To facilitate efficient command logging, it's recommended to adopt a consistent naming convention for your log files. In this case, we'll use the file name "what_i_did.txt" to store our command history. To create this empty log file, simply utilize the touch command:
+
+```sh
+touch what_i_did.txt
+```
+You can then edit this file manually using any text editor, such as `nano`.
+
+```sh
+nano what_i_did.txt
+```
+After editing the file you can then press `Ctrl X` to close the editor and press `enter` to save the changes.
+
+
+we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
 
 ```sh
 for i in $(seq 3)
@@ -64,20 +79,6 @@ The `done` command marks the end of the for loop, indicating that the loop shoul
 This will create 3 directories called: `stage_1`, `stage_2`, `stage_3`.
 
 Now type `ls` to ensure the directories have been indeed created.
-
-Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
-
-To facilitate efficient command logging, it's recommended to adopt a consistent naming convention for your log files. In this case, we'll use the file name "what_i_did.txt" to store our command history. To create this empty log file, simply utilize the touch command:
-
-```sh
-touch what_i_did.txt
-```
-You can then edit this file manually using any text editor, such as `nano`.
-
-```sh
-nano what_i_did.txt
-```
-After editing the file you can then press `Ctrl X` to close the editor and press `enter` to save the changes.
 
 Today we will create a very simple directory structure for our research project just to illustrate the principle. Each of our `stage` directories should contain three items:
 - a what_i_did.txt file.
