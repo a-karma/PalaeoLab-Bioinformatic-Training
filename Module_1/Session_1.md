@@ -18,11 +18,16 @@ The first command (`mkdir`) creates the required folder while the `cd` command i
 Now we need to create one directory where we are going to store our scripts, one for the raw data, and one for our results:
 
 ```sh
-mkdir scripts; mkdir raw_data; mkdir ReSuLtS
+mkdir scripts; mkdir raw_data; mkdir RaSuLts
 ```
-To assure yourself that all directories have been created you can use the command `ls` which lists the content of the current directory.
+
 >[!NOTE]
 > Use the semicolon (;) to separate different commands on the same line.
+
+To assure yourself that all directories have been created you can use the command `ls` which lists the content of the current directory.
+Do you notice anything strange? 
+The word `results` is misspellt and the directory name is written in a mix of upper and lower case letters. Let's fix this!
+
 
 Then, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
 
