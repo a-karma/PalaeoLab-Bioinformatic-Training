@@ -63,11 +63,7 @@ The `done` command marks the end of the for loop, indicating that the loop shoul
 
 This will create 3 directories called: `stage_1`, `stage_2`, `stage_3`.
 
-Now type:
-
-```ls```
-
-To ensure the directories have been indeed created.
+Now type `ls` to ensure the directories have been indeed created.
 
 Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
 
