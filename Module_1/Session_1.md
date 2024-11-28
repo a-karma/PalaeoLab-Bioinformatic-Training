@@ -57,9 +57,10 @@ After editing the file you can then press `Ctrl X` to close the editor and press
 >
 > log all the command you have run so far in your `what_i_did.txt` file
 
-### 2. Conditionals and Loops
-Any algoritmic procedure consists of a series of instructions that need to be performed in a given order.   (usually sequentially but some times in parallel) 
-we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
+You can visualize the content of this file using the command `cat path/to/file/file_name`
+
+### 2. Loops and variables
+Let's keep building up our file-system structure by creating a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
 
 ```sh
 for i in $(seq 3)
@@ -107,7 +108,6 @@ do
 touch $line/what_i_did.txt
 done < dir_list.txt
 ```
-
 The `$` sign preceding the variable named `line` is crucial in this context because it indicates that we are referencing the actual value stored in the variable, rather than the variable name itself. During each iteration of the loop, the `read` command reads a line from the `dir_list.txt` file and assigns its content to the `line` variable. Finally the command `touch` uses the content of the variable `$line` to create a `what_i_did.txt` file inside the right directory.
 
 > `Exercise 2`
@@ -156,7 +156,7 @@ done
 ```
 Now we should move each of these file to the corresponding `stage_{i}/output` directory.
 
-> `Exercise 3`
+> `Exercise 4`
 >
 > Use a for loop to move each of the output_file_{i} ∀i ∈ {1, 2, 3} to its own directory.
 > 
@@ -167,175 +167,3 @@ If you now run the `tree` command from the project_bash directory, you should ge
 
 ![File-system-structure](../IM/bash_tree.png)
 
-### 2. Regular expressions & file manipulations
-In this section we are going to apply what we already know about variables, conditional and loops to explore text files. 
-We will mostly focus on file manipulation using regular expressions, using `grep`, `sed` and `awk`.
-
-Regular expressions, also known as regex or regexp, are a powerful tool for manipulating text. They allow you to search for, extract, and modify patterns in text data. In Bash scripting, regular expressions are particularly useful for processing text files and automating tasks that involve text manipulation.
-
-Let’s start with opening a new terminal, connecting to the server and look at the file called `random.fasta`:
-```sh
-cd /home/DATA/module_1/
-less random.fasta
-Press Q to exit.
-```
-
-As the name suggests, this file contains some random DNA sequences of different length stored in a fasta format (a very common format for DNA analysis).
-
-As you can see, each entry consists of two lines: a header (with the sequence identifier) and a second line containing the actual sequence.
-Lets calculate how many lines are in this fasta file:
-```sh
-wc -l random.fasta
-```
-This gives us the total number of lines. Divide this number by two and you'll get the number of sequences.
-
-Now, let’s look at the first 7 sequences which correspond to the first 14 lines of the file.
-We can easily print them on screen using:
-```sh
-head -14 random.fasta
-```
-The `head` command is a fundamental tool in Bash scripting used to display the first portion of a file's contents. It's commonly used to quickly preview the beginning of a file or check for specific information at the start.
-
-If instead we were interested in the last 4 entries, we would use:
-```sh
-tail -8 random.fasta
-```
-The `tail` command is a versatile tool in Bash scripting used to display the last portion of a file's contents. It's commonly used to quickly review the end of a file, check for recent changes, or monitor log files in real time.
-
-We could use a combination of these two commands to extract a set of sequences in the middle of the file:
-```sh
-head -20 random.fasta | tail -4
-```
-With the last command we have selected the 9th and 10th entries corresponding to the lines from 17To assure yourself that all directories have been created you can use the command ls which lists the content of the current directory.
-
- to 20 in our fasta file.
-The vertical bar (`|`) is called `pipe` and it is used to connect the two commands (`head` and `tail` in this case). 
-Specifically, it redirects the standard output of the first command which then serves as input for the second command.
-
-Standard output, also known as stdout, is the default output stream of a process in a Unix-like operating system. It is the channel through which a process (here `head`) sends its output to another process (here `tail`).
-
-Piping the output of head into tail or vice versa is a simple way to extract a block of lines but it becomes very slow if the file you are dealing with is huge. An alternative is using `sed`. 
-
-`sed` is a stream editor, a powerful tool for manipulating text data. It allows you to search, replace, insert, and delete text within files or data streams. sed is commonly used in Bash scripting for tasks like processing log files, cleaning up text files, and performing text-based transformations.
-
-Let’s consider the following commands:
-
-```sh
-sed -n '9,12p' random.fasta
-sed -n '9,+3p' random.fasta
-```
-These are alternative ways of printing a range of lines. In this case we are printing lines from 9 to 12 which of course correspond to our 5th and 6th entry.
-
-It is unlikely though that we will know in advance the line numbers of the entries that are relevant to our analysis. Most of the time will have to parse the file and look for patterns. That’s when regular expressions (`regex`) become very useful.
-
-As you may have noticed, all header lines in random.fasta start with `>seq` followed by a number, `Hg`, and a letter, separated by underscores. The string `Hg` stands for haplogroup (A,B,or C) and we might be interested in knowing how many reads we have for each group. We can calculate this using `grep`.
-
-`grep` is a powerful tool for searching for patterns in text files. It is commonly used in Bash scripting to locate specific text strings, analyze log files, and perform text-based searches.
-
-`grep` stands for "global regular expression print" and it has the following syntax
-```sh
-grep 'regex' target_file
-```
-
-Let's consider the following command:
-
-```sh
-grep '>seq.*_Hg_A' random.fasta | wc -l
-```
-Let's unpack this command:
-
-In our example the regex or the pattern that we are looking is `>seq.*_Hg_A`. 
-
-This regular expression is designed not to match a unique sequence of character but rather a series of sequences that possess similar features.
-The regular expression `>seq.*` matches any line containing the string >seq followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). This means that the regex will match any line that starts with the exact sequence `>seq` and is followed by any combination of characters followed by the string `_Hg_A`. Thus, `grep` will print all the header lines in the random.fasta corresponding to haplogroup A and this output is the piped (|) into the command `wc -l` which simply counts the number of matching lines.
-
-> `Exercise 4`
->
-> Find out how many sequences we have for each group by modifying the pattern of the grep command above.
-
-We can also use a regex inside a sed command. For example, let's extract the 3rd sequence of each haplogroup:
-```sh
-sed -n '/seq_3_/,+1p' random.fasta > ~/project_bash/raw_data/third_seq_all_Hg.fasta
-```
-As you can see, it looks very similar to the sed command we used before with the exception that instead of providing sed with specific line number, 
-here we have specified a pattern (`/seq_3_/`) and asked the program to print each matching line plus and the following one: (+1p). 
-Finally, we have redirected the output to store this information into a file called third_seq_all_Hg.fasta.
-
-> `Exercise 5`
-> 
-> Now navigate to your `raw_data` directory and visualise the content of the file on screen using the command `cat name-of-the-file`.
-
-Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder you should see a file called `dog_genes.gtf`.
-
-A GTF (Gene Transfer Format) file is a text-based file format used to store information about the genomic structure of genes and their features. It is commonly used in genomics research to annotate and analyze genome sequences. It is a tab separated file containing annotations for coding sequences in the dog genome.
-
-We can extract the header if of this file (lines starting with #) by running:
-```sh
-grep '^#' /home/DATA/module_1/dog_genes.gtf
-```
-> `Exercise 6`
->
-> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the stage_1/output directory.
-
-The first line of your file without a header should look like:
-`X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
-It contains a lot of information that is not relevant for us at the moment. 
-The fields that we are interested in are:
-- The chromosome (X: 1st field)
-- The type of the feature (gene: 3rd field)
-- The starting position of the feature (1575: 4th field)
-- The ending position of the feature (5716: 5th field)
-
-> `Exercise 7`
-> 
-> Use `cut` to extract the required fields from dog_genes_no_H.tsv. Then redirect the output to a file called `dog_genes_table.tsv` inside your `stage_2/output/` directory. See cut --help to identify the option for fields
-
-Now that we have extracted the relevant information, we would like to make a few adjustments to our table. Let’s start with adding the string `chr` at the beginning of each line.
-We can do this easily by using the substitution command in `sed` which has the following general syntax:
-
-```sh
-sed 's/target/replacement/'
-```
-In our case we are going to modify the file in-place using the `-i` flag.
-
-```sh
-cd stage_2/output/
-sed -i 's/^/chr_/' dog_genes_table.tsv
-```
-In our example, the caret symbol (^) is a regex which denotes the beginning of a line and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
-
-The next thing we would like to do is switching the order of the columns in our table:
-- 1. Chromosome
-- 2. Starting Position
-- 3. Ending Position
-- 4. Feature Type
-
-This requires a simple awk command:
-```sh
-awk 'BEGIN {OFS="\t"};{print $1,$3,$4,$2}' stage_2/output/dog_genes_table.tsv > stage_3/output/d_g_tab_cfp.tsv
-```
-`awk` is a powerful scripting language designed for processing text files. It is commonly used in Bash scripting to manipulate, analyze, and transform text data. `awk` is particularly well-suited for tasks like parsing log files, extracting information from text files, and performing text-based calculations.
-
-The OFS option before the print command stands for ”Output Filed Separator” and we set it to Tab (`\t`) to ensure our table has the correct delimiter for a ”tab separated file” (TSV). `awk` stores each field in a different variable which is accessible via the `$` symbol.  We made use of this feature to put the columns in the right order.
-
-We are almost done with pre-processing our data but there’s still something that’s not quite right with it. Have a look at the first column:
-
-```sh
-cd stage_3/output
-cat d_g_tab_cfp.tsv | cut -f 1
-```
-Have you noticed that the chromosomes are not in the right order? Let’s fix it!
-```sh
-sort -V -o ../../results/d_g_sorted_table.bed d_g_tab_cfp.tsv
-```
-The `sort` command is a fundamental tool in Bash scripting used to organize and rearrange data based on specified criteria. It is commonly used to `sort` text files numerically or alphabetically, making it a versatile tool for data manipulation and analysis.
-
-Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now ready to be analysed.
-
-> `Bonus Exercise`
-> 
-> How many coding regions (CDS) on the X chromosome are listed in our bed file?
-> 
-> Use the commands you have learn to find out   
-
-We will have more information about `BED` files in the next session.
