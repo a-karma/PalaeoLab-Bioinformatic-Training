@@ -140,7 +140,7 @@ The first command is just to populate the `raw_data` folder with a file (`input_
 
 > `Exercise 3`
 >
-> Use the ln command to complete our file system structure
+> Use the `ln` command to complete our file system structure
 > by linking each `stage_{i}/output` to an input folder inside the `stage_{i+1}` directory.
 > Note that in our example stage_4 is actually termed results.
 
