@@ -88,7 +88,11 @@ In principles, you could navigate to the each stage directory using the `cd` com
 ```sh
 ls -d stage* > dir_list.txt
 ```
-Here the `-d` option modifies the behaviour of the command `ls` and forces it to list only directories. Note the word `stage*` after the `-d` flag: this restricts our list of directories to those that are termed `stage` followed by any other character (`*`). Lastly, note the use of the `>`. This symbol in bash has a special meaning: redirect the output of the command that precedes it to a file (`dir_list.txt` in this case).
+Here the `-d` option modifies the behaviour of the command `ls` and forces it to list only directories. 
+
+Note the word `stage*` after the `-d` flag: this restricts our list of directories to those that are termed `stage` followed by any other character (`*`). 
+
+Lastly, note the use of the `>`. This symbol in bash has a special meaning: redirect the output of the command that precedes it to a file (`dir_list.txt` in this case).
 
 Now that we have the list, we can easily implement another type of loop using the reserved word `while`:
 ```sh
