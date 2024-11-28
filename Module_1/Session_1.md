@@ -10,7 +10,7 @@ We will start with creating a parent directory for our project.
 mkdir project_bash
 cd project_bash
 ```
-The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the newly created directory (`project_bash`). To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory. 
+The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the newly created directory (`project_bash`). To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
 
 > [!Tip]
 > Never use white spaces when naming files or directories
@@ -20,12 +20,11 @@ Now we need to create one directory where we are going to store our scripts, one
 ```sh
 mkdir scripts; mkdir raw_data; mkdir results
 ```
-To assure yourself that all directory have been created you can use the command `ls` which lists on screen the content of the current directory.
+To assure yourself that all directories have been created you can use the command `ls` which lists the content of the current directory.
 >[!NOTE]
 > Use the semicolon (;) to separate different commands on the same line.
 
-Then, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming
-convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
+Then, we need to create a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
 
 ```sh
 for i in $(seq 3)
