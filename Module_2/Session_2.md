@@ -1,6 +1,6 @@
 ![bio_logo](../IM/header.png)
 
-## Day 2 - NGS data processing - Session 2
+## Module 2 - NGS data processing - Session 2
 In this session you will learn how to align reads to a reference genome and how to manipulate bam files.
 
 #### The SAM and BAM format
