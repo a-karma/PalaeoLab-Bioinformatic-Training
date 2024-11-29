@@ -167,9 +167,10 @@ If you now run the `tree` command from the project_bash directory, you should ge
 
 ![File-system-structure](../IM/bash_tree.png)
 
+### 3. Bash syntax
+Now that we have a learnt how to structure the filesystem for our researh projects let's keep exploring bash and practice a bit more with variables.
 
-Now that we have 
-
+First of all let's do some housekeeping and 
 ```sh
 cd; mkdir module1;
 cd module1
