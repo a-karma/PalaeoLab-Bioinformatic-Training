@@ -7,26 +7,24 @@ Before we start, let's organize yesterday's material and prepare the directory s
 Please connect to the server either via `putty` or via the `ssh` command then run:
 
 ```sh
-cd; mkdir day1; mkdir day2;
-mv ~/session2 ./day1/
-mv ~/project_bash ./day1/
-cd day2
+mkdir module2;
+cd module2
 mkdir qc; mkdir bams; mkdir vcfs; mkdir fastqs; mkdir scripts; mkdir lists
 touch what_i_did.txt
 ```
-You should now be in the `~/day2/` directory, run `ls -lh` to ensure that all sub-directories have been created.
+You should now be in the `~/module2/` directory, run `ls -lh` to ensure that all sub-directories have been created.
 
 Let's now create a symbolik link to the directory containing the input data for the tutorial:
 
 ```sh
-ln -s /home/DATA/Day_2/ ./raw_data
+ln -s /home/DATA/Module2/ ./raw_data
 ```
 
 Finally, we need to activate the conda environment to access all software we will need:
 
 ```sh
-conda activate Day_2
-ls ~/day2/raw_data/
+conda activate biolab
+ls ~/module2/raw_data/
 ```
 
 In your `raw_data` folder you should now see 8 files with the `.fastq` extension. These are the results of pair-end sequencing on Illumina HiSeq X platform of 4 babirusa individuals (one from each region of Sulawesi plus the Togean Islands as shown on the map). We are now going to familiarise with this file format and then evaluate the quality of these sequencing results.
