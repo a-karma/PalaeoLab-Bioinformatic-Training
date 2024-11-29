@@ -12,7 +12,7 @@ cd project_bash
 ```
 The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the newly created directory (`project_bash`). To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
 
-> [!IMPORTANT]
+> [!WARNING]
 > Never use white spaces when naming files or directories
 
 Now we need to create one directory where we are going to store our scripts, one for the raw data, and one for our results:
@@ -168,11 +168,9 @@ If you now run the `tree` command from the project_bash directory, you should ge
 ![File-system-structure](../IM/bash_tree.png)
 
 ### 3. Bash syntax
-Now that we have a learnt how to structure the filesystem for our researh projects let's keep exploring bash and practice a bit more with variables.
-
-First of all let's do some housekeeping and 
+Now that we have a learnt how to structure the filesystem for our researh projects let's keep exploring `bash` syntax. But before we start, let's do some housekeeping:
 ```sh
 cd; mkdir module1;
 cd module1
-mv ~/project_bash ./
+mv ~/project_bash/ ./
 ```
