@@ -116,9 +116,9 @@ The `$` sign preceding the variable named `line` is crucial in this context beca
 
 In data processing pipelines, where the output of one step becomes the input for the next, it's often necessary to transfer data between directories. However, blindly copying files can lead to inefficient storage usage and unnecessary data duplication. A more effective approach is to utilize symbolic links, which provide a pointer to the original data rather than creating a new copy.
 
-Consider the scenario where `stage_1/output` and `stage_1/input` contain identical data. Copying the entire contents from `stage_1/output` to `stage_1/input` would result in redundant storage of the same data, consuming unnecessary disk space.
+Consider the scenario where `stage_1/output` and `stage_2/input` contain identical data. Copying the entire contents from `stage_1/output` to `stage_2/input` would result in redundant storage of the same data, consuming unnecessary disk space.
 
-Symbolic links offer a solution to this issue. Instead of replicating the data, a symbolic link is created in `stage_1/input`, pointing to the original data in `stage_1/output`. This link acts as a shortcut, directing the system to the actual data location whenever the input directory is accessed.
+Symbolic links offer a solution to this issue. Instead of replicating the data, a symbolic link is created in `stage_2/input`, pointing to the original data in `stage_1/output`. This link acts as a shortcut, directing the system to the actual data location whenever the input directory is accessed.
 
 Here is an example of symbolic links:
 
