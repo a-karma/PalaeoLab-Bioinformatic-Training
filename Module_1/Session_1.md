@@ -167,3 +167,11 @@ If you now run the `tree` command from the project_bash directory, you should ge
 
 ![File-system-structure](../IM/bash_tree.png)
 
+
+Now that we have 
+
+```sh
+cd; mkdir module1;
+cd module1
+mv ~/project_bash ./
+```
