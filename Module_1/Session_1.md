@@ -5,13 +5,12 @@
 ### 1. The filesystem 
 This section outlines the basic commands for navigating file systems and creating a structured directory hierarchy for research projects. The naming of files and directories is more crucial than you might realize; a clear and consistent structure will significantly streamline your workflow, especially when dealing with complex projects and pipelines. While you can adapt and customize this template structure to your specific needs, adhering to these principles will greatly enhance project organization and accessibility.
 
-We will start with creating a parent directory for this module and one for our project. 
+We will start with creating a parent directory for our project. 
 ```sh
-mkdir module1
 mkdir project_bash
 cd project_bash
 ```
-The first two commands (`mkdir`) create the required folders while the `cd` command is used to move from your home directory to the newly created directory `project_bash`. To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
+The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the newly created directory `project_bash`. To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
 
 > [!WARNING]
 > Never use white spaces when naming files or directories
@@ -40,7 +39,40 @@ A second possibility is to move the directory (and its content) to a new directo
 ```sh
 mv RaSuLts results
 ```
-Now that we have corrected our mistake, we can start populating our directories starting with a `log` file. Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
+Now that we have corrected our mistake, let's do some more housekeeping to clarify the notion of `path`:
+```sh
+cd
+mkdir module1
+cd module1
+mv ../project_bash/ ./
+```
+Now run `pwd` and `ls`: do you see what happened? Let's explain this trick!
+
+The first `cd` command without any dir name is a shortcut to move from any position in the filesystem to your `home` directory.
+
+The `mkdir` command creates a new directory called `module1` and the `cd module1` command allows us to move inside this newly created directory.
+
+Lastly the `mv` command transfers the `project_bash` folder (and all its content) from your `home` directory to the `module1` directory. 
+
+Note how the two paths (source and destination) have been specified: 
+- source = `../project_bash/`
+- destination = `./`
+  
+These paths are usually called `relative` in the sense that the location in the filesystem is specified relative to the current directory *i.e.* `module1`. Let's explain this concept in more details:
+
+The `project_bash` directory was located inside your home dir, hence, from the `module1` dir we needed to move upstream one directory in order to find the folder called `project_bash`. This is signalled by the `../` symbols whch allow us to access the parent directory (*i.e.* your home dir). The `./` characters represent instead a general and concise way of specifying the current directory.
+ 
+> `Exercise 1`
+>
+> Which command should you use to:
+> 1. go to your home directory?
+> 2. move to the `raw_data` directory from your home dir?
+> 3. move to the `scripts` dir from `raw_data`?
+> 
+> Use relative paths to specify the directories
+
+
+ can start populating our directories starting with a `log` file. Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
 
 To facilitate efficient command logging, it's recommended to adopt a consistent naming convention for your log files. In this case, we'll use the file name "what_i_did.txt" to store our command history. To create this empty log file, simply utilize the touch command:
 
@@ -54,7 +86,7 @@ nano what_i_did.txt
 ```
 After editing the file you can then press `Ctrl X` to close the editor and press `enter` to save the changes.
 
-> `Exercise 1`
+> `Exercise 2`
 >
 > log all the command you have run so far in your `what_i_did.txt` file
 
@@ -111,7 +143,7 @@ done < dir_list.txt
 ```
 The `$` sign preceding the variable named `line` is crucial in this context because it indicates that we are referencing the actual value stored in the variable, rather than the variable name itself. During each iteration of the loop, the `read` command reads a line from the `dir_list.txt` file and assigns its content to the `line` variable. Finally the command `touch` uses the content of the variable `$line` to create a `what_i_did.txt` file inside the right directory.
 
-> `Exercise 2`
+> `Exercise 3`
 >
 > use a similar while loop to create a sub-directory called `output` inside each stage directory
 
@@ -139,7 +171,7 @@ ls raw_data
 ```
 The first command is just to populate the `raw_data` folder with a file (`input_zero.txt`). By running the second command you should see that an `input` folder has been created via the `ln` command. Now the `stage_1` directory contains all three elements required. The output of the third and fourth commands should be just `input_zero.txt`.
 
-> `Exercise 3`
+> `Exercise 4`
 >
 > Use the `ln` command to complete our file system structure
 > by linking each `stage_{i}/output` to an input folder inside the `stage_{i+1}` directory.
@@ -157,7 +189,7 @@ done
 ```
 Now we should move each of these file to the corresponding `stage_{i}/output` directory.
 
-> `Exercise 4`
+> `Exercise 5`
 >
 > Use a for loop to move each of the output_file_{i} ∀i ∈ {1, 2, 3} to its own directory.
 > 
@@ -168,38 +200,6 @@ If you now run the `tree` command from the project_bash directory, you should ge
 
 ![File-system-structure](../IM/bash_tree.png)
 
-### 3. Paths and variables
-Now that we have a learnt how to structure the filesystem for our researh projects let's do some housekeeping to practice a bit more with paths and variables:
-```sh
-cd
-mkdir module1
-cd module1
-mv ../project_bash/ ./
-```
-Now run `pwd` and `ls`: do you see what happened? Let's explain this trick!
-
-The first `cd` command without any dir name is a shortcut to move from any position in the filesystem to your `home` directory.
-
-The `mkdir` command creates a new directory called `module1` and the `cd module1` command allows us to move inside this newly created directory.
-
-Lastly the `mv` command transfers the `project_bash` folder (and all its content) from your `home` directory to the `module1` directory. 
-
-Note how the two paths (source and destination) have been specified: 
-- source = `../project_bash/`
-- destination = `./`
-  
-These paths are usually called `relative` in the sense that the location in the filesystem is specified relative to the current directory *i.e.* `module1`. Let's explain this concept in more details:
-
-The `project_bash` directory was located inside your home dir, hence, from the `module1` dir we needed to move upstream one directory in order to find the folder called `project_bash`. This is signalled by the `../` symbols whch allow us to access the parent directory (*i.e.* your home dir). The `./` characters represent instead a general and concise way of specifying the current directory. 
- 
-> `Exercise 5`
->
-> Which command should you use to:
-> 1. go to your home directory?
-> 2. move to the `stage_2/output` directory from your home dir?
-> 3. move to the `stage_3/input` dir from `stage_2/output`?
-> 
-> Use relative paths to specify the directories
 
 
 
