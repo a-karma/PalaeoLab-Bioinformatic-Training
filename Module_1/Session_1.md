@@ -181,4 +181,8 @@ The first `cd` command without any dir name is a shortcut to move from any posit
 
 The `mkdir` command creates a new directory called `module1` and the `cd module1` command allows us to move inside this newly created directory.
 
-Lastly the `mv` command transfers the `project_bash` directory from your `home` to the directory called `module1`. Note how we have used 
+Lastly the `mv` command transfers the `project_bash` folder (and all its content) from your `home` directory to the `module1` directory. 
+
+Note how the two paths (source and destination) have been specified: 
+- source = `../project_bash/`
+- destination = `./`
