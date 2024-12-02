@@ -168,9 +168,17 @@ If you now run the `tree` command from the project_bash directory, you should ge
 ![File-system-structure](../IM/bash_tree.png)
 
 ### 3. Bash syntax
-Now that we have a learnt how to structure the filesystem for our researh projects let's keep exploring `bash` syntax. But before we start, let's do some housekeeping:
+Now that we have a learnt how to structure the filesystem for our researh projects let's keep exploring `bash` syntax. But before we start, let's do some housekeeping and practice a bit more with paths and variables:
 ```sh
-cd; mkdir module1;
+cd
+mkdir module1
 cd module1
-mv ~/project_bash/ ./
+mv ../project_bash/ ./
 ```
+Now run `pwd` and `ls`: do you see what happened? Let's explain this trick!
+
+The first `cd` command without any dir name is a shortcut to move from any position in the filesystem to your `home` directory.
+
+The `mkdir` command creates a new directory called `module1` and the `cd module1` command allows us to move inside this newly created directory.
+
+Lastly the `mv` command transfers the `project_bash` directory from your `home` to the directory called `module1`. Note how we have used 
