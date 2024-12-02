@@ -92,7 +92,7 @@ After editing the file you can then press `Ctrl X` to close the editor and press
 You can visualize the content of this file using the command `cat path/to/file/file_name`
 
 >[!TIP]
-> The tab key triggers autocomplete in bash which is extremely useful to avoid typing complex and long paths!
+> The tab key triggers autocomplete in bash which is extremely useful to avoid typing complex and long paths or file-names!
 
 ### 2. Loops and variables
 Let's keep building up our file-system structure by creating a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
