@@ -217,17 +217,18 @@ There are essentially three syntax rules for conditionals in bash:
 - Always terminate line before adding a key word.
 - Remember to quote string variables.
 
-> Example 1
->
-> `a=2; b=3`
-> 
-> `if [ $a -le $b ]; then`
->
-> `echo "The first number is less than the second one"`
->
-> `fi` 
+Let's illustrate these rules and how conditional epressions work with an example:
 
-Let's explain line by line this example: 
+```sh
+a=2; b=3
+if [ $a -le $b ]
+then
+echo "The first number is less than the second one"
+fi
+```
+In the code above we first define two variables (`a` and `b`) and assign to each of them a value (`2` and `3` respectively).
+We then build our conditional starting with the reserved word `if` followed by the condition we want to evaluate   
+
 
 Complex expression are created by combining multiple condition with logical operators such AND (`&&`) and OR (`||`).
 
