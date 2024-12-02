@@ -71,10 +71,6 @@ The `project_bash` directory was located inside your home dir, hence, from the `
 > 
 > Use relative paths to specify the directories
 
->[!TIP]
-> The tab key triggers autocomplete in bash which is extremely useful to avoid typing complex and long paths!
-
-
 We can now begin with populating our directories starting with a `log` file. Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
 
 To facilitate efficient command logging, it's recommended to adopt a consistent naming convention for your log files. In this case, we'll use the file name "what_i_did.txt" to store our command history. To create this empty log file, simply utilize the touch command:
@@ -94,6 +90,9 @@ After editing the file you can then press `Ctrl X` to close the editor and press
 > log all the command you have run so far in your `what_i_did.txt` file
 
 You can visualize the content of this file using the command `cat path/to/file/file_name`
+
+>[!TIP]
+> The tab key triggers autocomplete in bash which is extremely useful to avoid typing complex and long paths!
 
 ### 2. Loops and variables
 Let's keep building up our file-system structure by creating a separate directory for each stage of our pipeline/analysis. Because of my lack of immagination, each directory will be termed as `stage` and we are going to number them sequentially but I would encourage you to use a better naming convention when it comes to your research. Given that typing the same command over and over is tedious, we are going to use one of the basics building blocks of any programming language: a loop.  
