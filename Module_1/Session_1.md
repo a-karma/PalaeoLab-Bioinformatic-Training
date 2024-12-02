@@ -207,8 +207,13 @@ If you now run the `tree` command from the project_bash directory, you should ge
 ![File-system-structure](../IM/bash_tree.png)
 
 
-### 3. Conditionals
+### 3. Conditionals and variables
 Another fundamental structure of any programming language are conditional expressions (a.k.a. if statements). They allow us to make decisions and run a piece of code only when it is needed. The general architecture of a conditional construct in bash is:
 
 ![Conditionals in bash](../IM/conditionals.png)
+
+There are three syntax rules for conditionals in bash: 
+-1. Always leave a space befor and after the conditional expression.
+-2. Always terminate line before adding a key word.
+-3. Remember to quote string variables.
 
