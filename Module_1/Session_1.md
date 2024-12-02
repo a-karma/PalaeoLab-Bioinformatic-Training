@@ -20,9 +20,7 @@ Now we need to create one directory where we are going to store our scripts, one
 ```sh
 mkdir scripts; mkdir raw_data; mkdir RaSuLts
 ```
-
->[!NOTE]
-> Use the semicolon (;) to separate different commands on the same line.
+Note the use of the semicolon (;) to separate different commands on the same line.
 
 To assure yourself that all directories have been created you can use the command `ls` which lists the content of the current directory.
 
@@ -181,6 +179,10 @@ The first command is just to populate the `raw_data` folder with a file (`input_
 > Note that in our example stage_4 is actually termed results.
 
 If you have made a mistake with links, do not panic. You can alwayse remove them with `rm` or with the `unlink` command.
+
+>[!NOTE]
+> When running the `ln` commands to create our links we have used the abslolute paths to both the source and the destination
+>The `~/` characters at the beginning of the paths represent a short cut which stands for `/home/userID/` directory. 
 
 Now that we have a good structure we can start populating our directories. Let's create some files in the `project_bash` directory.
 
