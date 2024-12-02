@@ -76,6 +76,7 @@ We can now begin with populating our directories starting with a `log` file. Mai
 To facilitate efficient command logging, it's recommended to adopt a consistent naming convention for your log files. In this case, we'll use the file name "what_i_did.txt" to store our command history. To create this empty log file, simply utilize the touch command:
 
 ```sh
+cd; cd module1/project_bash/
 touch what_i_did.txt
 ```
 You can then edit this file manually using any text editor, such as `nano`.
