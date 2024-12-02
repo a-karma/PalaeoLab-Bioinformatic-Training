@@ -71,6 +71,9 @@ The `project_bash` directory was located inside your home dir, hence, from the `
 > 
 > Use relative paths to specify the directories
 
+>[!TIP]
+> The tab key triggers autocomplete in bash which is extremely useful to avoid typing complex and long paths
+
 
  can start populating our directories starting with a `log` file. Maintaining a detailed record of executed commands is an essential practice for reproducibility and debugging purposes. By keeping a log of your actions, you can easily retrace your steps, identify potential errors, and effectively reproduce your work, even after a significant time gap.
 
