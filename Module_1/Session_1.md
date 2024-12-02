@@ -193,9 +193,12 @@ The `project_bash` directory was located inside your home dir, hence, from the `
  
 > `Exercise 5`
 >
-> which command should you use to:
+> Which command should you use to:
 > 1. go to your home directory?
 > 2. move to the `stage_2/output` directory from your home dir?
 > 3. move to the `stage_3/input` dir from `stage_2/output`?
+> 
 > Use relative paths to specify the directories
+
+
 
