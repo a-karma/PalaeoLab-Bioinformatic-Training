@@ -207,5 +207,8 @@ If you now run the `tree` command from the project_bash directory, you should ge
 ![File-system-structure](../IM/bash_tree.png)
 
 
+### 3. Conditionals
+Another fundamental structure of any programming language are conditional expressions (a.k.a. if statements). They allow us to make decisions and run a piece of code only when it is needed. The general architecture of a conditional construct in bash is:
 
+![Conditionals in bash](../IM/conditionals.png)
 
