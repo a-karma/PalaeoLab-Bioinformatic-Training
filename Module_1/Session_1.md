@@ -212,8 +212,20 @@ Another fundamental structure of any programming language are conditional expres
 
 ![Conditionals in bash](../IM/conditionals.png)
 
-There are three syntax rules for conditionals in bash: 
-- 1. Always leave a space befor and after the conditional expression.
-- 2. Always terminate line before adding a key word.
-- 3. Remember to quote string variables.
+There are essentially three syntax rules for conditionals in bash: 
+- Always leave a space befor and after the conditional expression.
+- Always terminate line before adding a key word.
+- Remember to quote string variables.
 
+> Example
+>
+> `a=2; b=3`
+> 
+> `if [ a -le b ]; then`
+>
+> `echo "The first number is less than the second one"`
+>
+> `fi` 
+> 
+
+Complex expression are created by combining multiple condition with logical operators such AND (`&&`) and OR (`||`)
