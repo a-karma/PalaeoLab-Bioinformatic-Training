@@ -5,7 +5,7 @@ In this section we will revise what we have learnt about variables in Bash, we w
 Before we start, let's run some preliminary commads to create the directory structure for this session:
 
 ```sh
-cd; mkdir session2; cd session2; mkdir raw_data; mkdir scripts; mkdir results 
+cd module1; mkdir shell_scripting; cd shell_scripting; mkdir raw_data; mkdir scripts; mkdir results 
 ```
 Note the use of `;`, which allows to run multiple commands in short succession.  
 
