@@ -186,3 +186,16 @@ Lastly the `mv` command transfers the `project_bash` folder (and all its content
 Note how the two paths (source and destination) have been specified: 
 - source = `../project_bash/`
 - destination = `./`
+  
+These paths are usually called `relative` in the sense that the location in the filesystem is specified relative to the current directory *i.e.* `module1`. Let's explain this concept in more details:
+
+The `project_bash` directory was located inside your home dir, hence, from the `module1` dir we needed to move upstream one directory in order to find the folder called `project_bash`. This is signalled by the `../` symbols whch allow us to access the parent directory (*i.e.* your home dir). The `./` characters represent instead a general and concise way of specifying the current directory. 
+ 
+> `Exercise 5`
+>
+> which command should you use to:
+> 1. go to your home directory?
+> 2. move to the `stage_2/output` directory from your home dir?
+> 3. move to the `stage_3/input` dir from `stage_2/output`?
+> use relative paths to specify the directories
+
