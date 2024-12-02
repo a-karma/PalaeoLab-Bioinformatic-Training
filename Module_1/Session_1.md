@@ -213,7 +213,7 @@ Another fundamental structure of any programming language are conditional expres
 ![Conditionals in bash](../IM/conditionals.png)
 
 There are three syntax rules for conditionals in bash: 
--1. Always leave a space befor and after the conditional expression.
--2. Always terminate line before adding a key word.
--3. Remember to quote string variables.
+- 1. Always leave a space befor and after the conditional expression.
+- 2. Always terminate line before adding a key word.
+- 3. Remember to quote string variables.
 
