@@ -5,12 +5,13 @@
 ### 1. The filesystem 
 This section outlines the basic commands for navigating file systems and creating a structured directory hierarchy for research projects. The naming of files and directories is more crucial than you might realize; a clear and consistent structure will significantly streamline your workflow, especially when dealing with complex projects and pipelines. While you can adapt and customize this template structure to your specific needs, adhering to these principles will greatly enhance project organization and accessibility.
 
-We will start with creating a parent directory for our project. 
+We will start with creating a parent directory for this module and one for our project. 
 ```sh
+mkdir module1
 mkdir project_bash
 cd project_bash
 ```
-The first command (`mkdir`) creates the required folder while the `cd` command is used to move from your home directory to the newly created directory (`project_bash`). To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
+The first two commands (`mkdir`) create the required folders while the `cd` command is used to move from your home directory to the newly created directory `project_bash`. To make sure you are now in the right directory, you can use the `pwd` command which prints on screen the name of the current directory *i.e.* your current position in the file system. 
 
 > [!WARNING]
 > Never use white spaces when naming files or directories
