@@ -159,7 +159,7 @@ Symbolic links offer a solution to this issue. Instead of replicating the data, 
 Here is an example of symbolic links:
 
 ```sh
-ln -s ~/project_bash/raw_data/ ~/project_bash/stage_1/input
+ln -s ~/module1/project_bash/raw_data/ ~/module1/project_bash/stage_1/input
 ```
 The `ln` command stands for ”link” and it has this general syntax:
 ```sh
