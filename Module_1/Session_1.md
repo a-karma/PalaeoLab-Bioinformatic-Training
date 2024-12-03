@@ -221,7 +221,7 @@ Let's illustrate these rules and how conditional epressions work with an example
 
 ```sh
 a=2; b=3
-if [ $a -le $b ]; then
+if [ $a -l $b ]; then
 echo "The first number is less than the second one"
 fi
 ```
