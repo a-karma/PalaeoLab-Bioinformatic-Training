@@ -226,7 +226,7 @@ echo "The first number is less than the second one"
 fi
 ```
 In the code above we first define two variables (`a` and `b`) and assign to each of them a value (`2` and `3` respectively).
-We then build our conditional starting with the reserved word `if` followed by the condition we want to evaluate. In this case we want to check whether the value assigned to the variable `a` *i.e.* `$a` is less than or equal to (`-le`) the value assigned to the variable `b` (`$b`). We put the condition within square brakets making sure we left a white space between the brackets and our condition. We terminate the line (`;`) before using the other reserved word `then` which introduces our command (`echo`). Finally we close our if statetement with the reserved word `fi`.
+We then build our conditional starting with the reserved word `if` followed by the condition we want to evaluate. In this case we want to check whether the value assigned to the variable `a` (*i.e.* `$a`) is less than (`-l`) the value assigned to the variable `b` (*i.e.* `$b`). We put the condition within square brakets making sure we left a white space between the brackets and our condition. We terminate the line (`;`) before using the other reserved word `then` which introduces our command (`echo`). Finally we close our if statetement with the reserved word `fi`.
 
 The command `echo` followed by a string will be executed only if our condition is `true` and in that case it will result in printing on screen the message `The first number is less than the second one`. If the condition is `false` nothing happens.
 
