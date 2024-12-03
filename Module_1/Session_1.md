@@ -256,7 +256,9 @@ if [ $a -le $b ] && [ $a -ge $b ]; then
 echo "The two numbers are equal"
 fi
 ``` 
-In this last example we have 
+In this last example we ask the shell to evaluate two condition before making a decision: the command `echo` will be exectued only if both conditions are true. This behaviour is obviously a consequence of the logical operator AND which connects our two conditions.
+
+
 
 
 
