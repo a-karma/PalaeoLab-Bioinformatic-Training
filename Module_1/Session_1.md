@@ -219,6 +219,7 @@ There are essentially three syntax rules for conditionals in bash:
 
 Let's illustrate these rules and how conditional epressions work with an example:
 
+> Example 1
 ```sh
 a=2; b=3
 if [ $a -l $b ]; then
@@ -232,6 +233,7 @@ The command `echo` followed by a string will be executed only if our condition i
 
 We can also provide alternatives in our conditionals meaning that we can ask the shell to execute a different command when the condition is false:
 
+> Example 2
 ```sh
 a=2; b=3
 if [ $a -g $b ]; then
@@ -242,22 +244,19 @@ else
 echo "The two numbers are equal"
 fi
 ```
+
 In this second example we have created a slightly more complex conditional that which covers all possible scenarios that can happen when comparing two numbers. The program will start by evaluating the first condition: " `a` is bigger than `b`". If this statement is true, it will print the first message and terminate its execution. If instead it turns out that the statement is false, the shell will move on and evaluate the second condition: "`b` is bigger than `a`". If this second statement is true it will print the second message and then again terminate. The last case scenario will happen only if both conditions are false which will cause to print on screen the third message and exit.
-
-
 
 Complex expression are created by combining multiple condition with logical operators such AND (`&&`) and OR (`||`).
 
-> Example 2
->
-> `a=2; b=2`
-> 
-> `if [ $a -le $b ] && [ $a -ge $b ]; then`
->
-> `echo "The two numbers are equal"`
->
-> `fi` 
-
+> Example 3
+```sh
+a=2; b=2
+if [ $a -le $b ] && [ $a -ge $b ]; then
+echo "The two numbers are equal"
+fi
+``` 
+In this last example we have 
 
 
 
