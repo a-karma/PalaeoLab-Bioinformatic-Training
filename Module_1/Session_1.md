@@ -280,7 +280,7 @@ If the content of the variable `line` is different from both `results` and `scri
 
 > Exercise 7
 >
-> Modify the following while loop and add the proper conditional using the correct syntax in bash
+> Modify the following while loop and add the proper conditional using the correct bash syntax
 
 ```sh
 while read -r line
@@ -288,7 +288,7 @@ do
 <insert conditionals here>
 done<all_dir_list.txt
 ```
-
+ 
 If you correctly solved all the exercise in this Session, you should get the following output when running the `tree` command from your `project_bash` directory:
 
 ![File-system-structure](../IM/bash_tree_final.png)
