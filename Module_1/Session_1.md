@@ -271,10 +271,8 @@ We would like to add a file termed `final_results.txt` to the directory `results
 
 ```sh
 if line=="results"
-then
 create the final_results.txt file inside the directory results
 elif line=="scripts"
-then
 create the bash_script.sh file inside the directory scripts
 ```
 
