@@ -119,11 +119,11 @@ A GTF (Gene Transfer Format) file is a text-based file format used to store info
 
 We can extract the header if of this file (lines starting with #) by running:
 ```sh
-grep '^#' /home/DATA/module_1/dog_genes.gtf
+grep '^#' dog_genes.gtf
 ```
 > `Exercise 3`
 >
-> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf` directory.
+> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.txt` inside the `bio_formats/gtf` directory.
 
 The first line of your file without a header should look like:
 `X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
@@ -136,7 +136,7 @@ The fields that we are interested in are:
 
 > `Exercise 4`
 > 
-> Use `cut` to extract the required fields from dog_genes_no_H.tsv. Then redirect the output to a file called `dog_genes_table.tsv` inside your `bio_formats/gtf/` directory. See cut --help to identify the option for fields
+> Use `cut` to extract the required fields from dog_genes_no_H.txt. Then redirect the output to a file called `dog_genes_table.tsv` inside your `bio_formats/gtf/` directory. See cut --help to identify the option for fields
 
 Now that we have extracted the relevant information, we would like to make a few adjustments to our table. Let’s start with adding the string `chr` at the beginning of each line.
 We can do this easily by using the substitution command in `sed` which has the following general syntax:
