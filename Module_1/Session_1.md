@@ -271,9 +271,9 @@ Let's first use what we learn to crate a list of all sub-directories:
 We would like to add a file termed `final_results.txt` to the directory `results` and a file called `bash_script.sh` to the directory `scripts`. In order to practice with conditionals, we are now going to parse line by line the file you've generated in `Exercise 6` using a while loop similar to the one you have seen in the previous sections. Each time we will need to evalute two conditions, see pseudo-code below: 
 
 ```sh
-if line=="results"
+if line == "results"
 create the final_results.txt file inside the directory results
-elif line=="scripts"
+elif line == "scripts"
 create the bash_script.sh file inside the directory scripts
 ```
 
