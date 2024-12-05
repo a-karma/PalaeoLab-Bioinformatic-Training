@@ -281,7 +281,8 @@ If the content of the variable `line` is different from both `results` and `scri
 
 > Exercise 7
 >
-> Modify the following while loop and add the proper conditional using the correct bash syntax
+> Modify the following while loop and add the proper conditional using the correct bash syntax:
+> make sure you leave a white space before and after the double equal sign (` == `) as well as after `[` and before `]`. 
 
 ```sh
 while read -r line
