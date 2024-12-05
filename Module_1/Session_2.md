@@ -18,7 +18,8 @@ Regular expressions, also known as regex or regexp, are a powerful tool for mani
 
 Let’s start by looking at the file called `random.fasta`:
 ```sh
-less ./raw_data/random.fasta
+cd raw_data
+less random.fasta
 Press Q to exit.
 ```
 
@@ -97,17 +98,19 @@ The regular expression `>seq.*` matches any line containing the string >seq foll
 
 We can also use a regex inside a sed command. For example, let's extract the 3rd sequence of each haplogroup:
 ```sh
-sed -n '/seq_3_/,+1p' random.fasta > ~/project_bash/raw_data/third_seq_all_Hg.fasta
+sed -n '/seq_3_/,+1p' random.fasta > ../fasta/third_seq_all_Hg.fasta
 ```
 As you can see, it looks very similar to the sed command we used before with the exception that instead of providing sed with specific line number, 
 here we have specified a pattern (`/seq_3_/`) and asked the program to print each matching line plus and the following one: (+1p). 
-Finally, we have redirected the output to store this information into a file called third_seq_all_Hg.fasta.
+Finally, we have redirected the output to store this information into a file called `third_seq_all_Hg.fasta`. Given that our current directory is `raw_data` we need to access the parent directory (`bio_format`) and from there we can then descend into the `fasta` directory where our new file belongs. Therefore, the path for redirection is `../fasta/` followed by the file name.
 
 > `Exercise 2`
 > 
-> Now navigate to your `raw_data` directory and visualise the content of the file on screen using the command `cat name-of-the-file`.
+> Now navigate to your `fasta` directory and visualise the content of the file on screen using the command `cat name-of-the-file`.
+>
+> Once finished, return to the `raw_data` directory.
 
-Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder you should see a file called `dog_genes.gtf`.
+Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder (which is linked to your `bio_formats/raw_data` folder) you should see a file called `dog_genes.gtf`.
 
 A GTF (Gene Transfer Format) file is a text-based file format used to store information about the genomic structure of genes and their features. It is commonly used in genomics research to annotate and analyze genome sequences. It is a tab separated file containing annotations for coding sequences in the dog genome.
 
@@ -115,9 +118,9 @@ We can extract the header if of this file (lines starting with #) by running:
 ```sh
 grep '^#' /home/DATA/module_1/dog_genes.gtf
 ```
-> `Exercise 6`
+> `Exercise 3`
 >
-> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the stage_1/output directory.
+> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf` directory.
 
 The first line of your file without a header should look like:
 `X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
@@ -128,9 +131,9 @@ The fields that we are interested in are:
 - The starting position of the feature (1575: 4th field)
 - The ending position of the feature (5716: 5th field)
 
-> `Exercise 7`
+> `Exercise 4`
 > 
-> Use `cut` to extract the required fields from dog_genes_no_H.tsv. Then redirect the output to a file called `dog_genes_table.tsv` inside your `stage_2/output/` directory. See cut --help to identify the option for fields
+> Use `cut` to extract the required fields from dog_genes_no_H.tsv. Then redirect the output to a file called `dog_genes_table.tsv` inside your `bio_formats/gtf/` directory. See cut --help to identify the option for fields
 
 Now that we have extracted the relevant information, we would like to make a few adjustments to our table. Let’s start with adding the string `chr` at the beginning of each line.
 We can do this easily by using the substitution command in `sed` which has the following general syntax:
