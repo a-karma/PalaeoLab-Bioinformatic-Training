@@ -1,15 +1,23 @@
 ![bio_logo](../IM/header.png)
 ## Module 1 - Basic concepts of command line programming - Session 2
-In this session we are going to apply what we already know about variables, conditional and loops to explore text files, manipulate them and write our first script.
+In this session we are going to apply what we already know about variables, conditional and loops to explore and manipulate text files focusing on common bioinformatic file formats. Before we start, let's prepare the directory structure for this session. Please connect to our cloud server and run:
+
+```sh
+cd ~/module1
+mkdir bio_formats
+cd bio_formats
+mkdir fasta; mkdir gtf; mkdir bed; mkdir raw_data
+ln -s /home/DATA/module_1/ ~/module1/bio_formats/raw_data
+```
+
 ### 1. Regular expressions & file manipulations
 In this first section we will mostly focus on regular expressions, and we will introduce three fundamental tools: `grep`, `sed` and `awk`.
 
 Regular expressions, also known as regex or regexp, are a powerful tool for manipulating text. They allow you to search for, extract, and modify patterns in text data. In Bash scripting, regular expressions are particularly useful for processing text files and automating tasks that involve text manipulation.
 
-Let’s start with opening a new terminal, connecting to the server and look at the file called `random.fasta`:
+Let’s start by looking at the file called `random.fasta`:
 ```sh
-cd /home/DATA/module_1/
-less random.fasta
+less ./raw_data/random.fasta
 Press Q to exit.
 ```
 
@@ -82,7 +90,7 @@ In our example the regex or the pattern that we are looking for is `>seq.*_Hg_A`
 This regular expression is designed not to match a unique sequence of character but rather a series of sequences that possess similar features.
 The regular expression `>seq.*` matches any line containing the string >seq followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). This means that the regex will match any line that starts with the exact sequence `>seq` and is followed by any combination of characters followed by the string `_Hg_A`. Thus, `grep` will print all the header lines in the random.fasta corresponding to haplogroup A and this output is the piped (|) into the command `wc -l` which simply counts the number of matching lines.
 
-> `Exercise 4`
+> `Exercise 1`
 >
 > Find out how many sequences we have for each group by modifying the pattern of the grep command above.
 
@@ -94,7 +102,7 @@ As you can see, it looks very similar to the sed command we used before with the
 here we have specified a pattern (`/seq_3_/`) and asked the program to print each matching line plus and the following one: (+1p). 
 Finally, we have redirected the output to store this information into a file called third_seq_all_Hg.fasta.
 
-> `Exercise 5`
+> `Exercise 2`
 > 
 > Now navigate to your `raw_data` directory and visualise the content of the file on screen using the command `cat name-of-the-file`.
 
