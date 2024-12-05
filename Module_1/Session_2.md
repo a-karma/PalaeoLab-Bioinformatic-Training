@@ -9,6 +9,7 @@ cd bio_formats
 mkdir fasta; mkdir gtf; mkdir bed; mkdir raw_data
 ln -s /home/DATA/module_1/ ~/module1/bio_formats/raw_data
 ```
+The commands above should be quite straightforward now but if you don't understand them, please revise Session 1.
 
 ### 1. Regular expressions & file manipulations
 In this first section we will mostly focus on regular expressions, and we will introduce three fundamental tools: `grep`, `sed` and `awk`.
