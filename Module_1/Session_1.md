@@ -293,7 +293,7 @@ If the content of the variable `line` is different from both `results` and `scri
 while read -r line
 do
 <insert conditionals here>
-done<all_dir_list.txt
+done<all_content_list.txt
 ```
  
 If you correctly solved all the exercise in this Session, you should get the following output when running the `tree` command from your `project_bash` directory:
