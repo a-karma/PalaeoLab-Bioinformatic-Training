@@ -276,7 +276,7 @@ create the final_results.txt file inside the directory results
 elif line=="scripts"
 then
 create the bash_script.sh file inside the directory scripts
-```sh
+```
 
 If the content of the variable `line` is different from both `results` and `scripts`, nothing happens.
 
