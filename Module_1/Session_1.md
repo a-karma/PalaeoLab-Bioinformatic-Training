@@ -260,12 +260,14 @@ In this last example we ask the shell to evaluate two condition before making a 
 
 Now that we have seen ho to built conditionals it's time for practice!
 
+Let's first use what we learn to crate a list of all sub-directories:
+
 > Exercise 6
 >
 > Go to the `project_bash` dir and list all directories.
-> Redirect the stdoutp to a file called all_dir_list.txt
+> Redirect the stdout to a file called all_dir_list.txt
 
-We are now going to parse line by line the file you've generated in `Exercise 6` using a while loop. Each time we are going to evaluate a condition and execute a command if the condition is true.  here's the condition written in pseudo-code:
+We would like to add a file termed `final_results.txt` to the directory results and a file called  now going to parse line by line the file you've generated in `Exercise 6` using a while loop similar to the one you have seen in the previous sections. In this case though 
 
 ```sh
 if line=="results" OR line==
