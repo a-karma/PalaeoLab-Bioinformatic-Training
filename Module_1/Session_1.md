@@ -219,6 +219,7 @@ There are essentially three syntax rules for conditionals in bash:
 
 Plus there is a good practice rule when dealing with strings: 
 - Remember to quote string variables.
+
 This will force the shell to interpret correctly escaped character such as tabs (`\t`), new-lines (`\n`), white-spaces (`\s`), etc.
 
 Let's illustrate these rules and how conditional epressions work with an example:
