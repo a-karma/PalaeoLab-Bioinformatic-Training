@@ -267,12 +267,34 @@ Let's first use what we learn to crate a list of all sub-directories:
 > Go to the `project_bash` dir and list all directories.
 > Redirect the stdout to a file called all_dir_list.txt
 
-We would like to add a file termed `final_results.txt` to the directory results and a file called  now going to parse line by line the file you've generated in `Exercise 6` using a while loop similar to the one you have seen in the previous sections. In this case though 
+We would like to add a file termed `final_results.txt` to the directory `results` and a file called `bash_script.sh` to the directory `scripts`. In order to practice with conditionals, we are now going to parse line by line the file you've generated in `Exercise 6` using a while loop similar to the one you have seen in the previous sections. Each time we will need to evalute two conditions, see pseudo-code below: 
 
 ```sh
-if line=="results" OR line==
+if line=="results"
+then
+create the final_results.txt file inside the directory results
+elif line=="scripts"
+then
+create the bash_script.sh file inside the directory scripts
 ```sh
 
+If the content of the variable `line` is different from both `results` and `scripts`, nothing happens.
 
+> Exercise 7
+>
+> Modify the following while loop and add the proper conditional using the correct syntax in bash
+
+```sh
+while read -r line
+do
+<insert conditionals here>
+done<all_dir_list.txt
+```
+
+If you correctly solved all the exercise in this Session, you should get the following output when running the `tree` command from your `project_bash` directory:
+
+![File-system-structure](../IM/bash_tree_final.png)
+
+This concludes our session, hope you had fun! 
 
 
