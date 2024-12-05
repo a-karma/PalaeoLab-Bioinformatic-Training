@@ -75,22 +75,25 @@ As you may have noticed, all header lines in random.fasta start with `>seq` foll
 
 `grep` is a powerful tool for searching for patterns in text files. It is commonly used in Bash scripting to locate specific text strings, analyze log files, and perform text-based searches.
 
-`grep` stands for "global regular expression print" and it has the following syntax
+`grep` stands for "global regular expression print" and it has the following syntax:
 ```sh
 grep 'regex' target_file
 ```
 
-Let's consider the following command:
+Let's consider the following command as our first example:
 
 ```sh
 grep '>seq.*_Hg_A' random.fasta | wc -l
 ```
-Let's unpack this command:
-
-In our example the regex or the pattern that we are looking for is `>seq.*_Hg_A`. 
+In this example the regex or the pattern that we are looking for is `>seq.*_Hg_A`. 
 
 This regular expression is designed not to match a unique sequence of character but rather a series of sequences that possess similar features.
-The regular expression `>seq.*` matches any line containing the string >seq followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). This means that the regex will match any line that starts with the exact sequence `>seq` and is followed by any combination of characters followed by the string `_Hg_A`. Thus, `grep` will print all the header lines in the random.fasta corresponding to haplogroup A and this output is the piped (|) into the command `wc -l` which simply counts the number of matching lines.
+
+The first part of our expression is `>seq.*`. This matches any line containing the string `>seq` followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). The second part of our regeular expression is `_Hg_A` which is designed to match any line containing this exact string. Therefore, our regular expression will match any line that:
+- starts with the exact sequence `>seq`
+- is followed by any combination of characters repeated zero or more times
+- is followed by the string `_Hg_A`.
+Thus, `grep` will print all the header lines in the random.fasta corresponding to haplogroup A and this output is the piped (|) into the command `wc -l` which simply counts the number of matching lines.
 
 > `Exercise 1`
 >
