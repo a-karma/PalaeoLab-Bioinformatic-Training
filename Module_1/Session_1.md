@@ -258,7 +258,18 @@ fi
 ``` 
 In this last example we ask the shell to evaluate two condition before making a decision: the command `echo` will be exectued only if both conditions are true. This behaviour is obviously a consequence of the logical operator AND which connects our two conditions.
 
+Now that we have seen ho to built conditionals it's time for practice!
 
+> Exercise 6
+>
+> Go to the `project_bash` dir and list all directories.
+> Redirect the stdoutp to a file called all_dir_list.txt
+
+We are now going to parse line by line the file you've generated in `Exercise 6` using a while loop. Each time we are going to evaluate a condition and execute a command if the condition is true.  here's the condition written in pseudo-code:
+
+```sh
+if line=="results" OR line==
+```sh
 
 
 
