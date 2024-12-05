@@ -298,7 +298,7 @@ done<all_content_list.txt
  
 If you correctly solved all the exercise in this Session, you should get the following output when running the `tree` command from your `project_bash` directory:
 
-![File-system-structure](../IM/bash_tree_final.png)
+![File-system-structure](../IM/bash_tree_2.png)
 
 This concludes our session, hope you had fun! 
 
