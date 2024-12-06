@@ -111,7 +111,7 @@ Finally, we have redirected the output to store this information into a file cal
 >
 > Once finished, return to the `raw_data` directory.
 
-Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder (which is linked to your `bio_formats/raw_data` folder) you should see a file called `dog_genes.gtf`.
+Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder (which is linked to `~/module1/bio_formats/raw_data` folder) you should see a file called `dog_genes.gtf`.
 
 A GTF (Gene Transfer Format) file is a text-based file format used to store information about the genomic structure of genes and their features. It is commonly used in genomics research to annotate and analyze genome sequences. It is a tab separated file containing annotations for coding sequences in the dog genome.
 
@@ -121,12 +121,12 @@ grep '^#' dog_genes.gtf
 ```
 > `Exercise 3`
 >
-> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.txt` inside the `bio_formats/gtf` directory.
+> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf` directory.
 
 The first line of your file without a header should look like:
 `X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
 It contains a lot of information that is not relevant for us at the moment. 
-The fields that we are interested in are:
+The fields (or columns) that we are interested in are:
 - The chromosome (X: 1st field)
 - The type of the feature (gene: 3rd field)
 - The starting position of the feature (1575: 4th field)
@@ -134,7 +134,11 @@ The fields that we are interested in are:
 
 > `Exercise 4`
 > 
-> Use `cut` to extract the required fields from dog_genes_no_H.txt. Then redirect the output to a file called `dog_genes_table.tsv` inside your `bio_formats/gtf/` directory. See cut --help to identify the option for fields
+> Use `cut` to extract the required fields from `dog_genes_no_H.tsv` file.
+>
+> Then redirect the output to a file called `dog_genes_table.tsv` inside your `bio_formats/gtf/` directory.
+>
+> See `cut --help` to identify the option for fields
 
 Now that we have extracted the relevant information, we would like to make a few adjustments to our table. Let’s start with adding the string `chr` at the beginning of each line.
 We can do this easily by using the substitution command in `sed` which has the following general syntax:
