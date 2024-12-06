@@ -96,7 +96,7 @@ Thus, `grep` will print all the header lines in the random.fasta corresponding t
 
 > `Exercise 1`
 >
-> Find out how many sequences we have for each group by modifying the pattern of the grep command above.
+> Find out how many sequences we have for each haplogroup (A,B,or C) by modifying the pattern of the grep command above.
 
 We can also use a regex inside a sed command. For example, let's extract the 3rd sequence of each haplogroup:
 ```sh
@@ -106,12 +106,6 @@ As you can see, it looks very similar to the sed command we used before with the
 here we have specified a pattern (`/seq_3_/`) and asked the program to print each matching line plus and the following one: (+1p). 
 Finally, we have redirected the output to store this information into a file called `third_seq_all_Hg.fasta`. Given that our current directory is `raw_data` we need to access the parent directory (`bio_format`) and from there we can then descend into the `fasta` directory where our new file belongs. Therefore, the path for redirection is `../fasta/` followed by the file name.
 
-> `Exercise 2`
-> 
-> Now navigate to your `fasta` directory and visualise the content of the file on screen using the command `cat name-of-the-file`.
->
-> Once finished, return to the `raw_data` directory.
-
 #### GTF
 Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder (which is linked to `~/module1/bio_formats/raw_data` folder) you should see a file called `dog_genes.gtf`.
 
@@ -119,6 +113,7 @@ A GTF (Gene Transfer Format) file is a text-based file format used to store info
 
 We can extract the header if of this file (lines starting with #) by running:
 ```sh
+cd ~/module1/bio_formats/raw_data
 grep '^#' dog_genes.gtf
 ```
 > `Exercise 3`
