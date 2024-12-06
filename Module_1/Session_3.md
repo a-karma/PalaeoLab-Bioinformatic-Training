@@ -5,7 +5,6 @@ In this last session of Module 1 we will revise what we have learnt about variab
 
 
 ### 2. Shell Scripting
-In this section we will revise what we have learnt about variables in Bash, we will then introduce the concept of positional arguments, and we will write our first shell script.
 
 Before we start, let's run some preliminary commads to create the directory structure for this session:
 
@@ -42,7 +41,7 @@ Tabs allow for consistent indentation across different file viewers and analysis
 Let's now deal with the names. Given that we don't know how many words each names consit of, we should start by printing all but the last two fields of the original input file:
 
 ```sh
-awk 'NF-=2 {print $0}'  ~/session2/raw_data/module_1/instructors_list.txt
+awk 'NF-=2 {print $0}'  ~//raw_data/module_1/instructors_list.txt
 ```
 
 Then we can pipe this into `sed` and replace all white spaces with the character `_`:
