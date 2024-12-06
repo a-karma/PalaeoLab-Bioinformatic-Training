@@ -121,7 +121,7 @@ grep '^#' dog_genes.gtf
 ```
 > `Exercise 3`
 >
-> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf` directory.
+> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf/` directory.
 
 The first line of your file without a header should look like:
 `X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
@@ -141,6 +141,7 @@ The fields (or columns) that we are interested in are:
 > See `cut --help` to identify the option for fields
 
 Now that we have extracted the relevant information, we would like to make a few adjustments to our table. Let’s start with adding the string `chr` at the beginning of each line.
+
 We can do this easily by using the substitution command in `sed` which has the following general syntax:
 
 ```sh
@@ -149,7 +150,7 @@ sed 's/target/replacement/'
 In our case we are going to modify the file in-place using the `-i` flag.
 
 ```sh
-cd stage_2/output/
+cd ~/module1/bio_formats/gtf/
 sed -i 's/^/chr_/' dog_genes_table.tsv
 ```
 In our example, the caret symbol (^) is a regex which denotes the beginning of a line and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
@@ -162,7 +163,7 @@ The next thing we would like to do is switching the order of the columns in our 
 
 This requires a simple awk command:
 ```sh
-awk 'BEGIN {OFS="\t"};{print $1,$3,$4,$2}' stage_2/output/dog_genes_table.tsv > stage_3/output/d_g_tab_cfp.tsv
+awk 'BEGIN {OFS="\t"};{print $1,$3,$4,$2}' dog_genes_table.tsv > d_g_tab_cfp.tsv
 ```
 `awk` is a powerful scripting language designed for processing text files. It is commonly used in Bash scripting to manipulate, analyze, and transform text data. `awk` is particularly well-suited for tasks like parsing log files, extracting information from text files, and performing text-based calculations.
 
@@ -180,7 +181,7 @@ sort -V -o ../../results/d_g_sorted_table.bed d_g_tab_cfp.tsv
 ```
 The `sort` command is a fundamental tool in Bash scripting used to organize and rearrange data based on specified criteria. It is commonly used to `sort` text files numerically or alphabetically, making it a versatile tool for data manipulation and analysis.
 
-Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now ready to be analysed.
+Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now ready to be analysed.bio_formats/gtf
 
 > `Bonus Exercise`
 > 
