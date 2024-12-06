@@ -201,7 +201,7 @@ The `sort` command is a fundamental tool in Bash scripting used to organize and 
 
 Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now in the corrected format and it's ready to be analysed.
 
-> `Exercise 5`
+> `Exercise 6`
 > 
 > How many coding regions (CDS) on the X chromosome are listed in our bed file?
 > 
@@ -283,7 +283,7 @@ bedtools intersect -a ./raw_data/Day_1/snp_ch30.bed -b ./raw_data/Day_1/genes_ch
 The intersect command reports overlapping regions between two BED/GFF/GTF files by comparing the coordinates of the genomic feature listed in them.
 The `-v` flag tells `intersect` to report all lines in file A (specified using the `-a` flag) that DO NOT overlap with the genomic intervals listed in file B (-b flag).
 
-> Exercise 6
+> Exercise 7
 >
 > How many SNPs we have excluded?
 >
@@ -325,7 +325,7 @@ You can examine the first output line using:
 cat ./results/ptw_prom_sequences.fa | head -1
 ```
 
-> Exercise 7
+> Exercise 8
 >
 > Combine the intersect and flank functions in order to filter the `snp_ch30.bed` file
 > by excluding CDS and all regions that are 5 kb from the start and the stop codon of each CDS.
