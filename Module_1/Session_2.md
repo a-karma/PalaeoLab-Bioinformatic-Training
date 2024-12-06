@@ -85,9 +85,7 @@ Let's consider the following command as our first example:
 ```sh
 grep '>seq.*_Hg_A' random.fasta | wc -l
 ```
-In this example the regex or the pattern that we are looking for is `>seq.*_Hg_A`. 
-
-This regular expression is designed not to match a unique sequence of character but rather a series of sequences that possess similar features.
+In this example the regex or the pattern that we are looking for is `>seq.*_Hg_A`. This regular expression is designed not to match a unique sequence of character but rather a series of sequences that possess similar features.
 
 Let's examine the pattern in more details. The first part of our expression is `>seq.*`. This matches any line containing the string `>seq` followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). The second part is `_Hg_A` which is designed to match any line containing this exact string. Therefore, our regular expression will match any line that:
 - starts with the exact series of characters `>seq`
