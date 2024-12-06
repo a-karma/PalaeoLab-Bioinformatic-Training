@@ -16,7 +16,7 @@ In this first section we will mostly focus on regular expressions, and we will i
 
 Regular expressions, also known as regex or regexp, are a powerful tool for manipulating text. They allow you to search for, extract, and modify patterns in text data. In Bash scripting, regular expressions are particularly useful for processing text files and automating tasks that involve text manipulation.
 
-#### FASTA
+#### The FASTA format
 Let’s start by looking at the file called `random.fasta`:
 ```sh
 cd raw_data
@@ -106,7 +106,7 @@ As you can see, it looks very similar to the sed command we used before with the
 here we have specified a pattern (`/seq_3_/`) and asked the program to print each matching line plus and the following one: (+1p). 
 Finally, we have redirected the output to store this information into a file called `third_seq_all_Hg.fasta`. Given that our current directory is `raw_data` we need to access the parent directory (`bio_format`) and from there we can then descend into the `fasta` directory where our new file belongs. Therefore, the path for redirection is `../fasta/` followed by the file name.
 
-#### GTF
+#### The GTF 
 Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder (which is linked to `~/module1/bio_formats/raw_data` folder) you should see a file called `dog_genes.gtf`.
 
 A GTF (Gene Transfer Format) file is a text-based file format used to store information about the genomic structure of genes and their features. It is commonly used in genomics research to annotate and analyze genome sequences. It is a tab separated file containing annotations for coding sequences in the dog genome.
@@ -116,7 +116,7 @@ We can extract the header if of this file (lines starting with #) by running:
 cd ~/module1/bio_formats/raw_data
 grep '^#' dog_genes.gtf
 ```
-> `Exercise 3`
+> `Exercise 2`
 >
 > Remove the header of this file using the ”select non matching lines” option of grep.
 >
@@ -125,7 +125,10 @@ grep '^#' dog_genes.gtf
 > Then redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf/` directory.
 
 The first line of your file without a header should look like:
-`X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
+`X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl" ... etc`
+
+
+
 It contains a lot of information that is not relevant for us at the moment. 
 
 The fields (or columns) that we are interested in are:
@@ -157,7 +160,7 @@ sed -i 's/^/chr_/' dog_genes_table.tsv
 ```
 In our example, the caret symbol (^) is a regex which denotes the beginning of a line and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
 
-#### BED
+#### The BED format
 The next thing we would like to do is switching the order of the columns in our table:
 - 1. Chromosome
 - 2. Starting Position
