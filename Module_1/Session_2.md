@@ -16,6 +16,7 @@ In this first section we will mostly focus on regular expressions, and we will i
 
 Regular expressions, also known as regex or regexp, are a powerful tool for manipulating text. They allow you to search for, extract, and modify patterns in text data. In Bash scripting, regular expressions are particularly useful for processing text files and automating tasks that involve text manipulation.
 
+#### FASTA
 Let’s start by looking at the file called `random.fasta`:
 ```sh
 cd raw_data
@@ -111,6 +112,7 @@ Finally, we have redirected the output to store this information into a file cal
 >
 > Once finished, return to the `raw_data` directory.
 
+#### GTF
 Let’s have a look at a different file format and keep  experimenting with regex. In the`/home/DATA/module_1` folder (which is linked to `~/module1/bio_formats/raw_data` folder) you should see a file called `dog_genes.gtf`.
 
 A GTF (Gene Transfer Format) file is a text-based file format used to store information about the genomic structure of genes and their features. It is commonly used in genomics research to annotate and analyze genome sequences. It is a tab separated file containing annotations for coding sequences in the dog genome.
@@ -121,11 +123,16 @@ grep '^#' dog_genes.gtf
 ```
 > `Exercise 3`
 >
-> Remove the header of this file using the ”select non matching lines” option of grep (-v flag) and redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf/` directory.
+> Remove the header of this file using the ”select non matching lines” option of grep.
+>
+> See `grep --help` to identify the correct flag for the job.
+>
+> Then redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf/` directory.
 
 The first line of your file without a header should look like:
 `X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl"; gene_biotype "protein_coding"`
 It contains a lot of information that is not relevant for us at the moment. 
+
 The fields (or columns) that we are interested in are:
 - The chromosome (X: 1st field)
 - The type of the feature (gene: 3rd field)
@@ -155,6 +162,7 @@ sed -i 's/^/chr_/' dog_genes_table.tsv
 ```
 In our example, the caret symbol (^) is a regex which denotes the beginning of a line and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
 
+#### BED
 The next thing we would like to do is switching the order of the columns in our table:
 - 1. Chromosome
 - 2. Starting Position
@@ -177,13 +185,13 @@ cat dog_genes_tab.bed | cut -f 1
 ```
 Have you noticed that the chromosomes are not in the right order? Let’s fix it!
 ```sh
-sort -V -o dog_genes_sorted_table.bed dog_genes_tab.bed
+sort -V -o dog_genes_sorted_tab.bed dog_genes_tab.bed
 ```
 The `sort` command is a fundamental tool in Bash scripting used to organize and rearrange data based on specified criteria. It is commonly used to `sort` text files numerically or alphabetically, making it a versatile tool for data manipulation and analysis.
 
-Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now ready to be analysed.
+Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now in the corrected format and it's ready to be analysed.
 
-> `Bonus Exercise`
+> `Exercise 5`
 > 
 > How many coding regions (CDS) on the X chromosome are listed in our bed file?
 > 
@@ -224,7 +232,7 @@ To protect the integrity of the file system on a server, normal users do not hav
 
 You can read more about conda [here](https://docs.conda.io/en/latest/).
 
-We have already installed conda on our server and we have created a different environment for each day of the workshop. In order to have access to conda please run:
+We have already installed conda on our server and we have created an environment with all software and dependencies need for this course. In order to have access to conda please run:
 
 ```sh
 source /home/anaconda3/bin/activate
@@ -235,7 +243,7 @@ This is signalling that you are now in the conda base environment which represen
 To activate the environment for this session, simply run:
 
 ```sh
-conda activate Day_1
+conda activate bio
 ```
 
 > Question: Have a look at your prompt again, what do you see? 
@@ -265,7 +273,7 @@ bedtools intersect -a ./raw_data/Day_1/snp_ch30.bed -b ./raw_data/Day_1/genes_ch
 The intersect command reports overlapping regions between two BED/GFF/GTF files by comparing the coordinates of the genomic feature listed in them.
 The `-v` flag tells `intersect` to report all lines in file A (specified using the `-a` flag) that DO NOT overlap with the genomic intervals listed in file B (-b flag).
 
-> Exercise 2
+> Exercise 6
 >
 > How many SNPs we have excluded?
 >
@@ -307,13 +315,13 @@ You can examine the first output line using:
 cat ./results/ptw_prom_sequences.fa | head -1
 ```
 
-> Exercise 3
+> Exercise 7
 >
 > Combine the intersect and flank functions in order to filter the `snp_ch30.bed` file
 > by excluding CDS and all regions that are 5 kb from the start and the stop codon of each CDS.
 
 
-If you finished early and you want to keep playing with bedtools have a look at this tutorial here: https://sandbox.bio/tutorials?id=bedtools-intro
+If you want to keep playing with bedtools have a look at this tutorial here: https://sandbox.bio/tutorials?id=bedtools-intro
 
 
 
