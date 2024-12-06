@@ -1,4 +1,9 @@
 ![bio_logo](../IM/header.png)
+## Module 1 - Basic concepts of command line programming - Session 3
+In this section we will revise what we have learnt about variables in Bash, we will then introduce the concept of positional arguments, and we will write our first shell script.
+
+
+
 ### 2. Shell Scripting
 In this section we will revise what we have learnt about variables in Bash, we will then introduce the concept of positional arguments, and we will write our first shell script.
 
