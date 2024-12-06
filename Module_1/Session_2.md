@@ -50,9 +50,8 @@ We could use a combination of these two commands to extract a set of sequences i
 ```sh
 head -20 random.fasta | tail -4
 ```
-With the last command we have selected the 9th and 10th entries corresponding to the lines from 17To assure yourself that all directories have been created you can use the command ls which lists the content of the current directory.
+With the last command we have selected the 9th and 10th entries corresponding to the lines from 17 to 20 in our fasta file.
 
- to 20 in our fasta file.
 The vertical bar (`|`) is called `pipe` and it is used to connect the two commands (`head` and `tail` in this case). 
 Specifically, it redirects the standard output of the first command which then serves as input for the second command.
 
@@ -69,6 +68,12 @@ sed -n '9,12p' random.fasta
 sed -n '9,+3p' random.fasta
 ```
 These are alternative ways of printing a range of lines. In this case we are printing lines from 9 to 12 which of course correspond to our 5th and 6th entry.
+
+> `Exercise 1`
+>
+> Use `sed` to extract the 23rd, 24th, and 25th sequence in the random.fasta file
+>
+> Redirect the output to a file called `23to25_seq.fasta` inside the `/bio_formats/fasta/` directory 
 
 It is unlikely though that we will know in advance the line numbers of the entries that are relevant to our analysis. Most of the time will have to parse the file and look for patterns. That’s when regular expressions (`regex`) become very useful.
 
@@ -94,7 +99,7 @@ Let's examine the pattern in more details. The first part of our expression is `
 - is followed by the string `_Hg_A`.
 Thus, `grep` will print all the header lines in the random.fasta corresponding to haplogroup A and this output is the piped (|) into the command `wc -l` which simply counts the number of matching lines.
 
-> `Exercise 1`
+> `Exercise 2`
 >
 > Find out how many sequences we have for each haplogroup (A,B,or C) by modifying the pattern of the grep command above.
 
