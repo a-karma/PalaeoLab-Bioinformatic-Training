@@ -89,8 +89,8 @@ In this example the regex or the pattern that we are looking for is `>seq.*_Hg_A
 
 This regular expression is designed not to match a unique sequence of character but rather a series of sequences that possess similar features.
 
-The first part of our expression is `>seq.*`. This matches any line containing the string `>seq` followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). The second part of our regeular expression is `_Hg_A` which is designed to match any line containing this exact string. Therefore, our regular expression will match any line that:
-- starts with the exact sequence `>seq`
+Let's examine the pattern in more details. The first part of our expression is `>seq.*`. This matches any line containing the string `>seq` followed by any character (represented by the `.` symbol) that appears zero or more times (`*`). The second part is `_Hg_A` which is designed to match any line containing this exact string. Therefore, our regular expression will match any line that:
+- starts with the exact series of characters `>seq`
 - is followed by any combination of characters repeated zero or more times
 - is followed by the string `_Hg_A`.
 Thus, `grep` will print all the header lines in the random.fasta corresponding to haplogroup A and this output is the piped (|) into the command `wc -l` which simply counts the number of matching lines.
