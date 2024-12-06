@@ -270,16 +270,17 @@ The `snp_ch30.bed` file in the folder `/home/DATA/module_1/` is an example of a 
 You can have a look at it using `less` or inspect just three lines with a combination of head and tail, see for example what you get by running:
 
 ```
-head -65 ~/session2/raw_data/Day_1/snp_ch30.bed | tail -3
+head -65 ~/module1/bio_formats/raw_data/snp_ch30.bed | tail -3
 ```
 
 Suppose you are interested in analysing neutral evolving sites, therefore, you may want to remove from the analysis all sites that are likely to be under selective pressures. 
 As a first approximation, we could take a conservative approach and start to analyse polymorphic sites (SNPs) that are not in coding region (i.e. do not code for protein and so less likely to be under selective constraints; please speak to your instructor if you do not understand this concept). Performing this task manually is obviously tedious and very time consuming but it's super fast using a software like bedtools:
 
 ```sh
-cd ~/session2/
-bedtools intersect -a ./raw_data/Day_1/snp_ch30.bed -b ./raw_data/Day_1/genes_chr30.gtf -v > ./results/snp_filtered.bed
+cd ~/module1/bio_formats/
+bedtools intersect -a ./raw_data/snp_ch30.bed -b ./raw_data/genes_chr30.gtf -v > ./bed/snp_filtered.bed
 ```
+
 The intersect command reports overlapping regions between two BED/GFF/GTF files by comparing the coordinates of the genomic feature listed in them.
 The `-v` flag tells `intersect` to report all lines in file A (specified using the `-a` flag) that DO NOT overlap with the genomic intervals listed in file B (-b flag).
 
@@ -295,34 +296,33 @@ How can you get that information?
 
 First of all you need to get the coordinates of the starting codons. This is very easy using grep:
 ```sh
-grep 'start_codon' ./raw_data/Day_1/genes_chr30.gtf > ./raw_data/CDS_start.gtf
+grep 'start_codon' ./raw_data/genes_chr30.gtf > ./gtf/CDS_start.gtf
 ```
 
 Now you need to modify this file using the function `flank` implemented in bedtools which will create flanking intervals for each region in a BED/GFF/VCF file.
 This function requires also a genome file defining the length of each chromosome, so let’s create this file first.
 ```sh
-echo -e "chr30\t40214260" > ./raw_data/ch30_length.bed
+echo -e "chr30\t40214260" > ./bed/ch30_length.bed
 ```
-The above command `echo` would normally output on screen whatever string you type after it. The value `40214260` is the size of chromosome 30 in the dog genome (which we used for this example).
-The `-e` option tells the software to enable the interpretation of backslash escapes and `\t` stands for TAB.
-Now we can run:
+The above command `echo` would normally output on screen whatever string you type after it. The value `40214260` is the size of chromosome 30 in the dog genome (which we used for this example). The `-e` option tells the software to enable the interpretation of backslash escapes and `\t` stands for TAB.
 
+Now we can run:
 ```sh
-bedtools flank -i ./raw_data/CDS_start.gtf -g ./raw_data/ch30_length.bed -l 10000 -r 0 > ./raw_data/ch30_promoters.gtf
+bedtools flank -i ./gtf/CDS_start.gtf -g ./bed/ch30_length.bed -l 10000 -r 0 > ./gtf/ch30_promoters.gtf
 ```
 where the `-l` and `-r` flags stand for left (or upstream) and right (or downstream) and the number following each of these flags represents the length of the flanking region.
 
 Finally we can use the `getfasta` function in bedtools to extract the actual sequences of the promoter regions:
 
 ```sh
-bedtools getfasta -fi ./raw_data/Day_1/ptw_ch30.fa -bed ./raw_data/ch30_promoters.gtf -fo ./results/ptw_prom_sequences.fa
+bedtools getfasta -fi ./raw_data/ptw_ch30.fa -bed ./gtf/ch30_promoters.gtf -fo ./fasta/ptw_prom_sequences.fa
 ```
 
 where the `-fi` flag stands for file input, the `-bed` indicates the coordinate file while the `-fo` option stands for file output. 
 
 You can examine the first output line using: 
 ```sh
-cat ./results/ptw_prom_sequences.fa | head -1
+cat ./fasta/ptw_prom_sequences.fa | head -1
 ```
 
 > Exercise 8
