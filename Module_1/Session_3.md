@@ -1,7 +1,6 @@
 ![bio_logo](../IM/header.png)
 ## Module 1 - Basic concepts of command line programming - Session 3
-In this last session of Module 1 we will revise what we have learnt about variables in Bash, we will then introduce the concept of positional arguments, and we will write our first shell script.
-
+In this last session of Module 1 we will revise what we have learnt about variables and text manipulation, we will then introduce the concept of positional arguments, and we will write our first shell script.
 
 
 ### 2. Shell Scripting
@@ -9,7 +8,7 @@ In this last session of Module 1 we will revise what we have learnt about variab
 Before we start, let's run some preliminary commads to create the directory structure for this session:
 
 ```sh
-cd module1; mkdir shell_scripting; cd shell_scripting; mkdir raw_data; mkdir scripts; mkdir results 
+cd ~/module1; mkdir shell_scripting; cd shell_scripting; mkdir raw_data; mkdir scripts; mkdir results 
 ```
 Note the use of `;`, which allows to run multiple commands in short succession.  
 
@@ -30,11 +29,11 @@ Unfortunately, the fields are not well defined because each word is separated by
 First of all we need to separate the last two fields (affiliation and status) from the instructors' names.
 We can do this in `awk` and make use of variable `NF` (number of fields variable) which is set to the total number of fields in the input record:
 ```sh
-awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/module_1/instructors_list.txt
+awk '{print $(NF-1),"\t",$NF}' ~/module1/shell_scripting/raw_data/instructors_list.txt
 ```
 Now let's redirect the output to a file:
 ```sh
-awk '{print $(NF-1),"\t",$NF}' ~/session2/raw_data/module_1/instructors_list.txt > ~/session2/raw_data/aff_status.txt
+awk '{print $(NF-1),"\t",$NF}' ~/module1/shell_scripting/raw_data/instructors_list.txt > ~/session2/raw_data/aff_status.txt
 ```
 Tabs allow for consistent indentation across different file viewers and analysis tools. Each tab represents a single logical level of indentation, making the alignment structure more apparent and easier to interpret. Tabs are also more compatible with automation tools and scripts used for sequence analysis and manipulation. Many software programs and scripts expect tab-delimited alignment files, and using tabs avoids potential compatibility issues or the need for manual formatting adjustments.
 
