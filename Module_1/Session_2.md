@@ -73,6 +73,8 @@ These are alternative ways of printing a range of lines. In this case we are pri
 >
 > Use `sed` to extract the 23rd, 24th, and 25th sequence in the random.fasta file
 >
+> Which lines do you need to print?
+>
 > Redirect the output to a file called `23to25_seq.fasta` inside the `/bio_formats/fasta/` directory 
 
 It is unlikely though that we will know in advance the line numbers of the entries that are relevant to our analysis. Most of the time will have to parse the file and look for patterns. That’s when regular expressions (`regex`) become very useful.
@@ -121,7 +123,7 @@ We can extract the header if of this file (lines starting with #) by running:
 cd ~/module1/bio_formats/raw_data
 grep '^#' dog_genes.gtf
 ```
-> `Exercise 2`
+> `Exercise 3`
 >
 > Remove the header of this file using the ”select non matching lines” option of grep.
 >
@@ -130,9 +132,8 @@ grep '^#' dog_genes.gtf
 > Then redirect the output to a file called `dog_genes_no_H.tsv` inside the `bio_formats/gtf/` directory.
 
 The first line of your file without a header should look like:
+
 `X ensembl gene 1575 5716 . + . gene_id "ENSCAFG00000010935"; gene_version "3"; gene_source "ensembl" ... etc`
-
-
 
 It contains a lot of information that is not relevant for us at the moment. 
 
@@ -165,8 +166,14 @@ sed -i 's/^/chr_/' dog_genes_table.tsv
 ```
 In our example, the caret symbol (^) is a regex which denotes the beginning of a line and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
 
+> `Exercise 5`
+>
+> Use `grep` to extract from the `dog_genes_table.tsv` file all annotated regions on chromosome 17.
+>
+> Redirect this output to a file called `dog_genes_chr17.tsv` inside the `bio_formats/gtf/' folder.
+
 #### The BED format
-The next thing we would like to do is switching the order of the columns in our table:
+Our `dog_genes_table.tsv` contains all the info we need but this is not presented in a standard format for bioinformatics. In order to transform it into a proper `tab` separated file format called BED (short for Browser Extensible Data) we need to rearrange the order of the columns in our table as follows:
 - 1. Chromosome
 - 2. Starting Position
 - 3. Ending Position
@@ -210,7 +217,7 @@ In the previous section we have seen three examples of text file that are common
 - The `GTF` (Gene Transfer Format) developed for the Ensembl genome browser
 - The `BED` (Browser Extensible Data) format developed at UCSC for the Genome Browser tool
 
-The `GTF` and the `BED` format are both TAB-separated files used to store genomic regions as coordinates along with their associated annotations (see the previous session for more information on `GTF`). While `GTF` is used to store mostly information about genic structure accross the genome (i.e. the G stands for gene), the `BED` (short for Browser Extensible Data) stores information about any genomic features. It is simpler than `GTF` and widely used in bioinformatics and consist of at least 3 fields:
+The `GTF` and the `BED` format are both TAB-separated files used to store genomic regions as coordinates along with their associated annotations (see the previous session for more information on `GTF`). While `GTF` is used to store mostly information about genic structure accross the genome (i.e. the G stands for gene), the `BED` format stores information about any genomic features. It is simpler than `GTF`, widely used in bioinformatics, and it consists of at least 3 fields:
 
 1. chromsome ID
 2. start of feature (0 based coordinate; see link to UCSC below)
