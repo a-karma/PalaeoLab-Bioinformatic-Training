@@ -163,7 +163,7 @@ The next thing we would like to do is switching the order of the columns in our 
 
 This requires a simple awk command:
 ```sh
-awk 'BEGIN {OFS="\t"};{print $1,$3,$4,$2}' dog_genes_table.tsv > d_g_tab_cfp.tsv
+awk 'BEGIN {OFS="\t"};{print $1,$3,$4,$2}' dog_genes_table.tsv > dog_genes_tab.bed
 ```
 `awk` is a powerful scripting language designed for processing text files. It is commonly used in Bash scripting to manipulate, analyze, and transform text data. `awk` is particularly well-suited for tasks like parsing log files, extracting information from text files, and performing text-based calculations.
 
@@ -172,16 +172,16 @@ The OFS option before the print command stands for ”Output Filed Separator” 
 We are almost done with pre-processing our data but there’s still something that’s not quite right with it. Have a look at the first column:
 
 ```sh
-cd stage_3/output
-cat d_g_tab_cfp.tsv | cut -f 1
+cd bed
+cat dog_genes_tab.bed | cut -f 1
 ```
 Have you noticed that the chromosomes are not in the right order? Let’s fix it!
 ```sh
-sort -V -o ../../results/d_g_sorted_table.bed d_g_tab_cfp.tsv
+sort -V -o dog_genes_sorted_table.bed dog_genes_tab.bed
 ```
 The `sort` command is a fundamental tool in Bash scripting used to organize and rearrange data based on specified criteria. It is commonly used to `sort` text files numerically or alphabetically, making it a versatile tool for data manipulation and analysis.
 
-Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now ready to be analysed.bio_formats/gtf
+Here we used the -V option because we are dealing with a mixture of numerical and string data. Note also the -o to specify the output file which must precede the input. Our table is now ready to be analysed.
 
 > `Bonus Exercise`
 > 
@@ -193,7 +193,7 @@ We will have more information about `BED` files in the next section.
 
 
 ### 2. Working with bioinformatic softwares using conda
-In Session 1 we have seen three examples of text file that are commonly used in bioinformatics:
+In the previous section we have seen three examples of text file that are commonly used in bioinformatics:
 
 - The `fasta` format to store DNA sequence information
 - The `GTF` (Gene Transfer Format) developed for the Ensembl genome browser
@@ -205,7 +205,7 @@ The `GTF` and the `BED` format are both TAB-separated files used to store genomi
 2. start of feature (0 based coordinate; see link to UCSC below)
 3. end of the feature 
 
-Other fields (4 etc.) are free form (as long as they are tab separated) - these can be used to store any information you may want, e.g. the name of the interval. For more information about this widely use format refer to the UCSC website here: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
+Other fields (4th, 5th, etc.) are free form (as long as they are tab separated) - these can be used to store any information you may want, e.g. the name of the interval. For more information about this widely use format refer to the UCSC website here: https://genome.ucsc.edu/FAQ/FAQformat.html#format1
 
 Although in principles we could manually edit these files using standard text editors this becomes very unpractical when dealing with very large files.
 A more efficient option would be combinig command line tools (like `sed`, `awk`, or `grep`) but performing complex tasks using only these tools is not straightforward and often require a good basis understanding of unix. Luckly for us, bioinformaticians have created various software specifically designed to manipulate these file formats. 
