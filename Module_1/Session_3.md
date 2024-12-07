@@ -69,7 +69,8 @@ Now that we have created these two intermediate files we can stitch them togethe
 cd ~/module1/shell_scripting/lists/
 paste names.txt aff_status.txt > corrected_instructors_list.tsv
 ```
-The `paste` command is a versatile tool that combines text from multiple files. It's particularly useful for merging data, and comparing files.
+The `paste` command is a versatile tool that combines text from multiple files.  
+It's particularly useful for merging data, and comparing files.
 
 The series of commands presented above acts as a single unit to accomplish the required task. Therefore we can transform them into a script that we can re-use.
 ```sh
