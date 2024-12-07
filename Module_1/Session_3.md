@@ -6,7 +6,7 @@ In this last session of Module 1 we will revise what we have learnt about variab
 A script is just a file that contains a series of commands. A `bash script` is a series of command interpreted by the shell. 
 This means that it needs to comply with shell syntax rules or in other words it is written in bash language. 
 
-- The first line is called shebang: `#!/bin/bash`.\  
+- The first line is called shebang: `#!/bin/bash`.   
   It means that the script will be executed using the Bash shell (located in the `/bin` folder) as interpreter.
 - Lines starting with `#` are interpreted as comments and will be ignored.
 - Multiple statements on a single line must be separated by a `;`
