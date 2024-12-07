@@ -125,7 +125,7 @@ Table 1.1 regex metacharacters
 |[a-z]|character set: matches any lowercase letter|
 |[ˆ]|complementary set: it will match anything but the character(s) enclosed|
 |[ˆh-k]|complementary set: it will match anything but the characters in range h to k|
-|\| escape metacharacters|
+| \ |escape metacharacters|
 
 We can also use a regex inside a sed command. For example, let's extract the 3rd sequence of each haplogroup:
 ```sh
