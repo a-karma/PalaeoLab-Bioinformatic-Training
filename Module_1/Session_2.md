@@ -107,9 +107,9 @@ Thus, `grep` will print all the header lines in the random.fasta corresponding t
 
 > [!NOTE]
 >
-> The `.` and `*` symbol in a regex are called metacharacter meaning that they have a special meaning (see table 1.1).
+> The `.` and `*` symbol in a regex are called metacharacter meaning that they have a special meaning (see table 1.2.1).
 
-Table 1.1 regex metacharacters
+Table 1.2.1 regex metacharacters
 |Symbol|Meaning|
 | ------ | ------ |
 |.|matches any character (except newline)|
@@ -186,7 +186,7 @@ In our case we are going to modify the file in-place using the `-i` flag.
 cd ~/module1/bio_formats/gtf/
 sed -i 's/^/chr_/' dog_genes_table.tsv
 ```
-In our example, the caret symbol (^) is a regex which denotes the beginning of a line and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
+In our example, the caret symbol (^) is metacharacter which denotes the beginning of a line (see table 1.2.1) and we replaced this with `chr_`. You can check whether the substitution worked or not by examining the first 10 lines of the table with head.
 
 > `Exercise 5`
 >
