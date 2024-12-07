@@ -105,6 +105,27 @@ Thus, `grep` will print all the header lines in the random.fasta corresponding t
 >
 > Find out how many sequences we have for each haplogroup (A,B,or C) by modifying the pattern of the grep command above.
 
+> [!NOTE]
+>
+> The `.` and `*` symbol in a regex are called metacharacter meaning that they have a special meaning (see table 1.1).
+
+Table 1.1 regex metacharacters
+|Symbol|Meaning|
+|.|matches any character (except newline)|
+|$|Anchor: matches the end of the line|
+|ˆ|Anchor: matches the start of the line|
+|*|the previous character can be matched zero or more times|
+|+|the previous character can be matched one or more times|
+|?|the previous character can be matched either once or zero times|
+|{m, n}|the previous character can be matched at least m times and at most n times|
+|{m, }|the previous character can be matched at least m times|
+|{, n}|the previous character can be matched at most n times|
+|[]|character set: it matches any of the enclosed characters|
+|[a-z]|character set: matches any lowercase letter|
+|[ˆ]|complementary set: it will match anything but the character(s) enclosed|
+|[ˆh-k]|complementary set: it will match anything but the characters in range h to k|
+|\| escape metacharacters|
+
 We can also use a regex inside a sed command. For example, let's extract the 3rd sequence of each haplogroup:
 ```sh
 sed -n '/seq_3_/,+1p' random.fasta > ../fasta/third_seq_all_Hg.fasta
