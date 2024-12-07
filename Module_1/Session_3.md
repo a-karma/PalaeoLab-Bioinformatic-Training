@@ -19,7 +19,7 @@ A script will make use of the building blocks of programming such as conditional
 - A variable is a character string to which we assign a value.
 - Variables are symbolic references to chunks of memory *i.e* they are pointers to the actual data. 
 - Variables’ names are traditionally declared in capital letters.
-- Values assigned to a variables are accessed by commands using the $ sign followed by the variable name.
+- Values assigned to a variables are made accessible to commands using the $ sign followed by the variable name.
 
 
 
