@@ -111,6 +111,7 @@ Thus, `grep` will print all the header lines in the random.fasta corresponding t
 
 Table 1.1 regex metacharacters
 |Symbol|Meaning|
+| ------ | ------ |
 |.|matches any character (except newline)|
 |$|Anchor: matches the end of the line|
 |ˆ|Anchor: matches the start of the line|
