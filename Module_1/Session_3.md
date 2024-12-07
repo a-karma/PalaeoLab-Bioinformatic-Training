@@ -2,8 +2,19 @@
 ## Module 1 - Basic concepts of command line programming - Session 3
 In this last session of Module 1 we will revise what we have learnt about variables and text manipulation, we will then introduce the concept of positional arguments, and we will write our first shell script.
 
+### 1. Shell Scripting - Theory
+A script is just a file that contains a series of commands. A `bash script` is a series of command interpreted by the shell. 
+This means that it needs to comply with shell syntax rules or in other words it is written in bash language. 
 
-### 1. Shell Scripting
+- The first line is called shebang: `#!/bin/bash`
+  It means that the script will be executed using the Bash shell (located in the `/bin` folder) as interpreter.
+- Lines starting with `#` are interpreted as comments and will be ignored.
+- Multiple statements on a single line must be separated by a `;`
+- To split a single statement (command) on multiple lines use `\`
+- No indentation needed (but might be useful to make your code more readable)
+- Call a script by invoking `bash` followed by the script name (with its path) 
+
+### 2. Shell Scripting - Practice
 
 Before we start, let's run some preliminary commads to create the directory structure for this session:
 
