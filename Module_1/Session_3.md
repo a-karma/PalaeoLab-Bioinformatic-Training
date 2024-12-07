@@ -12,10 +12,11 @@ This means that it needs to comply with shell syntax rules or in other words it 
 - Multiple statements on a single line must be separated by a `;`
 - To split a single statement (command) on multiple lines use `\`
 - No indentation needed (but might be useful to make your code more readable)
-- Call a script by invoking `bash` followed by the script name (with its path) 
+- Call a script by invoking `bash` followed by the script name (with its path)
 
-### 2. Shell Scripting - Practice
+A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks. Although each script is designed to find a solution to a specific problem, 
 
+### 2. Shell Scripting - Example
 Before we start, let's run some preliminary commads to create the directory structure for this session:
 
 ```sh
@@ -137,5 +138,4 @@ Now we can execute the script from the `shell_scripting` directory and provide t
 >
 > Use this script to correctly format the `participants_list.txt`. Make sure you input the right path to this file and use a sensible name for the output file (second argument)
 
-
-If you finished early and you want to keep playing with bedtools have a look at this tutorial here: https://sandbox.bio/tutorials?id=bedtools-intro
+### Shell Scripting - Practice
