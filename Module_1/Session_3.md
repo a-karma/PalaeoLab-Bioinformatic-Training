@@ -26,7 +26,7 @@ In order to mantain a certain level of generalization, you will often need to de
 
 >[!NOTE]
 > Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
-> Choosing a meaningful naming convention though can greatly improve the readability of your code and will make dubugging easier.
+> Choosing a meaningful naming convention though can greatly improve the readability of your code and make dubugging easier.
 
 A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks. 
 
