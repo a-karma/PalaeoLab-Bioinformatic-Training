@@ -14,8 +14,9 @@ This means that it needs to comply with shell syntax rules or in other words it 
 - No indentation needed (but might be useful to make your code more readable)
 - Call a script by invoking `bash` followed by the script name (with its path)
 
+#### Flexibility
 Although each script is designed to find a solution to a specific problem, it needs to posses some flexibility so that it can be used to process different input with a similar data structure.  
-For example: imagine that you want to write a script to calculate the sum of 2 plus 3. Even if your script returns the correct value (*i.e.* 5) it is rather useless because of its lack of generalization. On the contrary, a script that calculate the sum of any two integer is way more useful because it solves a whole class of problems.
+For example: imagine that you want to write a script to calculate the sum of 2 plus 3. Even if your script returns the correct value (*i.e.* 5) it is rather useless because of its lack of generalization. On the contrary, a script that calculates the sum of any two integer is way more useful because it solves a whole class of problems.
 
 In order to mantain a certain level of generalization, you will often need to define and use variables in your script:
 
@@ -28,7 +29,16 @@ In order to mantain a certain level of generalization, you will often need to de
 > Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
 > Choosing a meaningful naming convention though can greatly improve the readability of your code and make dubugging easier.
 
-A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks. 
+Another important feature that promotes the flexibility of your code is the use of `arguments` (a.k.a. *args*)
+
+#### Modularity
+A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks.  
+A group of commands that act a unit constitutes a module that can be recycled in the future. 
+These modules are often re-written as `functions` so that they can be easily included in other scripts.  
+
+Functions in bash have the following syntax:
+
+
 
 
 ### 2. Shell Scripting - Example
