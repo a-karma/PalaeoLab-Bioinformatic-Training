@@ -29,7 +29,29 @@ In order to mantain a certain level of generalization, you will often need to de
 > Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
 > Choosing a meaningful naming convention though can greatly improve the readability of your code and make dubugging easier.
 
-Another important feature that promotes the flexibility of your code is the use of `arguments` (a.k.a. *args*)
+Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list, thus `$1` will refer to the first argument, `$2` represents the second and so on. Let's consider the following script to illustrate the concept.
+
+```sh
+cat arg_tester.sh
+```
+The comand above will output on screen the content of the script called `arg_tester.sh` which looks like this:
+
+```sh
+echo "Username: $1"
+echo "Age: $2"
+echo "Status: $3"
+```
+Now if we call the script from its directory using the following command:
+```sh
+bash arg_tester.sh Jason 27 "phd student"
+```
+We should obtain the following output on screen:
+```sh
+Username: Jason
+Age: 27
+Status: phd student
+```
+This is because the each `echo` command will process a different argument in the order that they have been passed to our script at the call. Note that because our third argument consisted of two words separated by a space we had to enclose them in quotes.
 
 #### Modularity
 A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks.
@@ -139,8 +161,7 @@ Note that we have added two lines to delete the intermediate files (names.txt an
 This version looks slightly better but the input and output are still hard-coded inside the script. 
 Ideally, we would like to supply the input and output at the runtime (meaning when we execute the script). To do so we can make use of positional arguments.
 
-The indexing of the arguments starts at one, and the first argument can be accessed inside the script using $1. Similarly, the second argument can be accessed using $2, and so on.
-Thus our final version of `formatting.sh` should be:
+As explained in our previous section, indexing of the arguments starts at one, and the first argument can be accessed inside the script using $1. Similarly, the second argument can be accessed using $2, and so on. Thus our final version of `formatting.sh` should be:
 ```sh
 #!/usr/bin/bash
 
