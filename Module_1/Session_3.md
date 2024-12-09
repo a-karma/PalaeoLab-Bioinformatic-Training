@@ -29,7 +29,7 @@ In order to mantain a certain level of generalization, you will often need to de
 > Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
 > Choosing a meaningful naming convention though can greatly improve the readability of your code and make dubugging easier.
 
-Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list, thus `$1` will refer to the first argument, `$2` represents the second and so on. Let's consider the following script to illustrate the concept.
+Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list. Therefore, `$1` will refer to the first argument, `$2` represents the second and so on. Let's consider the following script to illustrate the concept.
 
 ```sh
 cat arg_tester.sh
