@@ -29,13 +29,12 @@ In order to mantain a certain level of generalization, you will often need to de
 > Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
 > Choosing a meaningful naming convention though can greatly improve the readability of your code and make dubugging easier.
 
-Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list. Therefore, `$1` refers to the first argument, `$2` represents the second and so on. Let's consider the following script to illustrate the concept.
+Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list. Therefore, `$1` refers to the first argument, `$2` represents the second and so on. Let's consider the following example to illustrate the concept of positional arguments.
 
 ```sh
 cat arg_tester.sh
 ```
 The comand above will output on screen the content of the script called `arg_tester.sh` which looks like this:
-
 ```sh
 echo "Username: $1"
 echo "Age: $2"
@@ -45,7 +44,7 @@ Now if we call the script from its directory using the following command:
 ```sh
 bash arg_tester.sh Jason 27 "phd student"
 ```
-We should obtain the following output on screen:
+We obtain the following output on screen:
 ```sh
 Username: Jason
 Age: 27
@@ -60,6 +59,8 @@ These modules are often re-written as `functions` so that they can be easily inc
 
 Functions in bash have the following syntax:
 
+
+#### Portability & Scalability
 
 
 
