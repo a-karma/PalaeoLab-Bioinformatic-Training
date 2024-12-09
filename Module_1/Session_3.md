@@ -19,11 +19,14 @@ For example: imagine that you want to write a script to calculate the sum of 2 p
 
 In order to mantain a certain level of generalization, you will often need to define and use variables in your script:
 
-- A variable is a character string to which we assign a value.
+- A variable is a character string to which we assign a value.readability
 - Variables are symbolic references to chunks of memory *i.e* they are pointers to the actual data. 
 - Variables’ names are traditionally declared in capital letters.
 - Values assigned to a variables are made accessible to commands using the $ sign followed by the variable name.
 
+>[!NOTE]
+> Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
+> Choosing a meaningful naming convention though can greatly improve the readability of your code and will make dubugging easier.
 
 A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks. 
 
