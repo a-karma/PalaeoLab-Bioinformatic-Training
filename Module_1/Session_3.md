@@ -14,13 +14,17 @@ This means that it needs to comply with shell syntax rules or in other words it 
 - No indentation needed (but might be useful to make your code more readable)
 - Call a script by invoking `bash` followed by the script name (with its path)
 
-A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks. Although each script is designed to find a solution to a specific problem, 
+Although each script is designed to find a solution to a specific problem, it needs to posses some flexibility so that it can be used to process different input with a similar data structure. For example: imagine that you want to write a script to calculate the sum of 2 plus 3. Even if your script returns the correct value (*i.e.* 5) it is rather useless because of its lack of generalization. On the contrary, a script that calculate the sum of any two integer is way more useful because it solves a whole class of problems.
+
+In order to mantain a certain level of generalization, you will often need to define and use variables in your script:
 
 - A variable is a character string to which we assign a value.
 - Variables are symbolic references to chunks of memory *i.e* they are pointers to the actual data. 
 - Variables’ names are traditionally declared in capital letters.
 - Values assigned to a variables are made accessible to commands using the $ sign followed by the variable name.
 
+
+A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks. 
 
 
 ### 2. Shell Scripting - Example
