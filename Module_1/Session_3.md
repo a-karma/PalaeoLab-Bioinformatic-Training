@@ -57,11 +57,22 @@ A script will make use of the building blocks of programming such as conditional
 A group of commands that act a unit constitutes a module that can be recycled in the future.
 These modules are often re-written as `functions` so that they can be easily included in other scripts.  
 
-Functions in bash have the following syntax:
+Functions in bash have either the following syntaxes:
 
-
-#### Portability & Scalability
-
+```sh
+# Option 1
+function function_name {
+# function body
+<insert code here>
+}
+```
+```sh
+# Option 2
+function_name(){
+# function body
+<insert code here>
+}
+```
 
 
 ### 2. Shell Scripting - Example
