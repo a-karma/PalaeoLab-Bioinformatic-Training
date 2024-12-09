@@ -32,8 +32,8 @@ In order to mantain a certain level of generalization, you will often need to de
 Another important feature that promotes the flexibility of your code is the use of `arguments` (a.k.a. *args*)
 
 #### Modularity
-A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks.  
-A group of commands that act a unit constitutes a module that can be recycled in the future. 
+A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks.
+A group of commands that act a unit constitutes a module that can be recycled in the future.
 These modules are often re-written as `functions` so that they can be easily included in other scripts.  
 
 Functions in bash have the following syntax:
