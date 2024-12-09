@@ -57,7 +57,11 @@ A script will make use of the building blocks of programming such as conditional
 A group of commands that act a unit constitutes a module that can be recycled in the future.
 These modules are often re-written as `functions` so that they can be easily included in other scripts.  
 
-Functions in bash have either the following syntaxes:
+- Function can be thought as a small script within a script.
+- They are particularly useful when a given task need to be performed several times.
+- The function definition needs to appear in the script before any function call.
+
+Functions in bash have either of the following syntaxes:
 
 ```sh
 # Option 1
