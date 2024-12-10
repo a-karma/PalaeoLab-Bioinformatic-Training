@@ -111,10 +111,12 @@ Before examining the function itself, let's have a look at the general structure
 Now let's look at the function body *i.e.* the code enclosed in curly brackets which consists of three lines:
 - Line 1 defines the variable `number_of_lines`
 - Line 2 consists of a command (`echo`) in which we use the first (and only) argument provided to the function at its call (`$1`)
-- Line 3 consists of a command (`echo`) in which we use the value of the variable defined on the first line ($number_of_lines lines)
+- Line 3 consists of a command (`echo`) in which we use the value of the variable defined on the first line (`$number_of_lines lines`)
 
-
-
+Note that the function argument `$1` acts as a place holder, it will be replaced by the value you pass to the function at the call.
+- At the first call we have: `$1` = `$FILE_INPUT1` = "long_text.txt"
+- At the second call we have instead: `$1` = `$FILE_INPUT2` = "short_text.txt"
+ 
 
 If we want to test our script on two previously created filed termed `long_text.txt` and `short_text.txt` we need to run:
 ```sh
