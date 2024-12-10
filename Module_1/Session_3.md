@@ -246,7 +246,7 @@ paste names.txt aff_status.txt > $OUTPUT_FILE
 rm names.txt
 rm aff_status.txt
 ```
-Now we can execute the script from the `shell_scripting` directory and provide the correct input and output at the call:
+Now we can execute the script from the `shell_scripting` directory providing the input and output at the call as arguments:
 
 ```sh
 ./scripts/formatting.sh ./raw_data/instructors_list.txt ./results/corrected_instructors_list.txt
@@ -257,3 +257,18 @@ Now we can execute the script from the `shell_scripting` directory and provide t
 > Use this script to correctly format the `participants_list.txt`. Make sure you input the right path to this file and use a sensible name for the output file (second argument)
 
 ### Shell Scripting - Practice
+Let's keep experimenting with scripts and functions. Imagine that you have created a file called `forgotten_file_loc.txt` and you would like to check it's content but you don't remember in which directory you have put it. To solve this problem we can use the following command:
+
+```sh
+locate forgotten_file_loc.txt
+```
+which will output on screen the file location *i.e.* its path.
+
+> Exercise 2
+>
+> Create a script `called file_finder.sh` inside the `schell_scripting/scripts` directory.
+>
+> This script should use the command `locate` to print on screen the path of the file passed as argument at its call.
+
+Let's inspect the content of this file (use `less` or `cat` to visualizze it).
+As you can see, it contains 
