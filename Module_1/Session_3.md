@@ -233,7 +233,7 @@ Note that we have added two lines to delete the intermediate files (names.txt an
 This version looks slightly better but the input and output are still hard-coded inside the script. 
 Ideally, we would like to supply the input and output at the runtime (meaning when we execute the script). To do so we can make use of positional arguments.
 
-As explained in our previous section, indexing of the arguments starts at one, and the first argument can be accessed inside the script using $1. Similarly, the second argument can be accessed using $2, and so on. Thus our final version of `formatting.sh` should be:
+As explained in our previous section, indexing of the arguments starts at one, and the first argument can be accessed inside the script using `$1`. Similarly, the second argument can be accessed using `$2`, and so on. Thus our final version of `formatting.sh` should be:
 ```sh
 #!/usr/bin/bash
 
