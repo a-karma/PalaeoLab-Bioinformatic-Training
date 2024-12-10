@@ -311,7 +311,7 @@ Given that we need to repeat this strategy multiple times we might want to use a
 >
 > Create a new script called `bed_file_parser_v2.sh` (see below).
 >
-> complete the loop structure by filling the `<gap>`
+> Complete the loop structure by filling the `<gap>`
 
 ```sh
  #!/bin/bash
@@ -324,3 +324,33 @@ do
 cat <gap2> | grep <gap3> | wc -l
 done
 ```
+We are getting very close to our final goal. We just need to output our table. To do so we need to modify our for loop so that at each iteration we can store the value obtained from the `wc -l` command into a variable. Then we are going to print the category name and its count on the same line, and finally append it our result file. 
+
+> Exercise 5
+>
+> Create a new script called `bed_file_parser_v3.sh` (see below).
+>
+> Complete the loop structure by filling the `<gap>`
+>
+> Call this script using the right arguments
+
+```sh
+ #!/bin/bash
+
+FILE_WITH_PATH=$(locate $1)
+CATEGORIES=$(cut -f4 $FILE_WITH_PATH | sort | uniq)
+OUTPUT_FILE="results/"$2
+
+echo "Feature_type\tCounts" > <gap1>
+for element in $CATEGORIES
+do
+count=$(cat $FILE_WITH_PATH | grep $element | wc -l)
+echo "<gap2>\t<gap3>" >> <gap1> 
+done
+```
+
+>[!TIP]
+>The first `echo` command is used to create the header line of our table.
+>
+>The second `echo` command should append a new line at each iteration
+
