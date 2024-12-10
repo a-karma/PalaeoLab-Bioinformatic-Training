@@ -354,7 +354,7 @@ done
 >
 >The second `echo` command should append a new line at each iteration.
 >
-> Note the use of the -e flag which enables interpretation of backslash escapes (`\t` = `Tab`)
+> Note the use of the `-e` flag which enables interpretation of backslash escapes (`\t` = `Tab`)
 
 You can now visualize our summary table inside the `shell_scripting/results` directory.
 
