@@ -20,7 +20,7 @@ For example: imagine that you want to write a script to calculate the sum of 2 p
 
 In order to mantain a certain level of generalization, you will often need to define and use variables in your script:
 
-- A variable is a character string to which we assign a value.readability
+- A variable is a character string to which we assign a value.
 - Variables are symbolic references to chunks of memory *i.e* they are pointers to the actual data. 
 - Variables’ names are traditionally declared in capital letters.
 - Values assigned to a variables are made accessible to commands using the $ sign followed by the variable name.
@@ -29,7 +29,8 @@ In order to mantain a certain level of generalization, you will often need to de
 > Variable names are complitely arbitrary in the sense that they will work no matter what string of characters you use.  
 > Choosing a meaningful naming convention though can greatly improve the readability of your code and make dubugging easier.
 
-Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list. Therefore, `$1` refers to the first argument, `$2` represents the second and so on. Let's consider the following example to illustrate the concept of positional arguments.
+Another important feature that promotes coding flexibility is the use of `arguments` (a.k.a. *args*). Args are parameters that can be passed to the script at the call as a white-space separated list. Args can be accessed inside the script using the dollar sign followed by their index meaning their position in the list. Therefore, `$1` refers to the first argument, `$2` represents the second and so on.  
+Let's consider the following example to illustrate the concept of positional arguments.
 
 ```sh
 cat arg_tester.sh
