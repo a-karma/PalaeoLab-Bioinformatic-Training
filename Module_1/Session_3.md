@@ -57,7 +57,7 @@ This is because each `echo` command will process a different argument in the ord
 
 #### Modularity
 A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks.
-A group of commands that act a unit constitutes a module that can be recycled in the future.
+A group of commands that act as a unit constitutes a module that can be recycled in the future.
 These modules are often re-written as `functions` so that they can be easily included in other scripts.  
 
 - Function can be thought as a small script within a script.
