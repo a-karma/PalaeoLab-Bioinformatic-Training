@@ -288,12 +288,39 @@ The command above extracts the 4th field from our file, sorts this column alphab
 > - Add the `cut` command to your script using this new variable
 > - Call the script passing `forgotten_file_loc.txt` as the first argument to print on screen the categories
 
-Now that we have our list of category we would like to use it count for each category how many entry we find in our bed file. Finally we would like to create an output file containing a table with two columns: category and number of entries. Let's make a copy of our script and start editing it:
+Now that we have our list of category we would like to use it count for each category how many entry we find in our bed file. Finally we would like to create an output file containing a table with two columns: category and number of entries. Let's have a look at the current version of our script:
+```sh
+cat scripts/bed_file_parser_v1.sh
+```
+If you have correctly solved Exercise 2 and 3, the output on screen should look like this:
+```sh
+#!/bin/bash
+
+FILE_WITH_PATH=$(locate $1)
+cut -f4 $FILE_WITH_PATH | sort | uniq
+```
+As we have seen in the previous sessions, we can use regex to output all lines in a file that match a specific pattern and count how many they are with the command `wc -l`. Hence, we will need to use something like this:
 
 ```sh
-cp scripts/bed_file_parser_v1.sh scripts/bed_file_parser_v2.sh
-cat scripts/bed_file_parser_v2.sh
+cat "our_file_input_with_path" | grep "category_name" | wc -l
 ```
-The output on screen should look like this:
 
+Given that we need to repeat this strategy multiple times we might want to use a for loop to automate the task. First of all, it's best to create a new variable where we can store our list of categories. Then, at each iteration of the loop, we should move along this list considering a different element every time, and use it as the pattern of our regex. The loop should stop when we have exhausted our list of categories.
 
+> Exercise 4
+>
+> Create a new script called `bed_file_parser_v2.sh` (see below).
+>
+> complete the loop structure by filling the `<gap>`
+
+```sh
+ #!/bin/bash
+
+FILE_WITH_PATH=$(locate $1)
+CATEGORIES=$(cut -f4 $FILE_WITH_PATH | sort | uniq)
+
+for element in <gap1>
+do
+cat <gap2> | grep <gap3> | wc -l
+done
+```
