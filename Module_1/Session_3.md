@@ -266,7 +266,7 @@ which will output on screen the file location *i.e.* its path.
 
 > Exercise 2
 >
-> Create a script `called file_finder.sh` inside the `schell_scripting/scripts` directory.
+> Create a script called `file_finder.sh` inside the `schell_scripting/scripts` directory.
 >
 > This script should use the command `locate` to print on screen the path of the file passed as argument at its call.
 
