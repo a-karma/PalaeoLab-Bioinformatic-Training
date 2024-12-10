@@ -349,7 +349,7 @@ echo -e "<gap2>\t<gap3>" >> <gap1>
 done
 ```
 
->[!TIP]
+>[!IMPORTANT]
 >The first `echo` command is used to create the header line of our table.
 >
 >The second `echo` command should append a new line at each iteration.
