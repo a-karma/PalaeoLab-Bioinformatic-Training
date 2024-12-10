@@ -288,7 +288,7 @@ The line above consists of three different commands joint together using pipes (
 > - Add the `cut` command to your script using this new variable.
 > - Call the script passing `forgotten_file_loc.txt` as the first argument to print on screen the categories.
 
-Now that we have our list of category we would like to use it count for each category how many entry we find in our bed file. Finally we would like to create an output file containing a table with two columns: category and number of entries. Let's have a look at the current version of our script:
+Now that we have identified the categories, we would like to count how many entry we find in our bed file for each category. Let's have a look at the current version of our script:
 ```sh
 cat scripts/bed_file_parser_v1.sh
 ```
@@ -299,13 +299,13 @@ If you have correctly solved Exercise 2 and 3, the output on screen should look 
 FILE_WITH_PATH=$(locate $1)
 cut -f4 $FILE_WITH_PATH | sort | uniq
 ```
-As we have seen in the previous sessions, we can use regex to output all lines in a file that match a specific pattern and count how many they are with the command `wc -l`. Hence, we will need to use something like this:
+As we have seen in the previous sessions, we can use regex to output all lines in a file matching a specific pattern and count how many they are with the command `wc -l`. Hence, we will need to use something like this:
 
 ```sh
 cat "our_file_input_with_path" | grep "category_name" | wc -l
 ```
 
-Given that we need to repeat this strategy multiple times we might want to use a for loop to automate the task. First of all, it's best to create a new variable where we can store our list of categories. Then, at each iteration of the loop, we should move along this list considering a different element every time, and use it as the pattern of our regex. The loop should stop when we have exhausted our list of categories.
+Given that we need to repeat this strategy multiple times we might want to use a `for loop` to automate the task. First of all, it's best to create a new variable where we can store our list of categories. Then, at each iteration of the loop, we should move along this list considering a different element every time, and use it as the pattern of our regex. The loop should stop when we have exhausted our list of categories.
 
 > Exercise 4
 >
@@ -324,7 +324,7 @@ do
 cat <gap2> | grep <gap3> | wc -l
 done
 ```
-We are getting very close to our final goal. We just need to output our table. To do so we need to modify our for loop so that at each iteration we can store the value obtained from the `wc -l` command into a variable. Then we are going to print the category name and its count on the same line, and finally append it our result file. 
+Lastly, we would like to create an output file containing a table with two columns: category and number of entries. To do so we need to modify our for loop so that at each iteration we can store the value obtained from the `wc -l` command into a variable. Then, we are going to print the category name and its count on the same line, and finally append this line to our result file. 
 
 > Exercise 5
 >
@@ -341,16 +341,30 @@ FILE_WITH_PATH=$(locate $1)
 CATEGORIES=$(cut -f4 $FILE_WITH_PATH | sort | uniq)
 OUTPUT_FILE="results/"$2
 
-echo "Feature_type\tCounts" > <gap1>
+echo -e "Feature_type\tCounts" > <gap1>
 for element in $CATEGORIES
 do
 count=$(cat $FILE_WITH_PATH | grep $element | wc -l)
-echo "<gap2>\t<gap3>" >> <gap1> 
+echo -e "<gap2>\t<gap3>" >> <gap1> 
 done
 ```
 
 >[!TIP]
 >The first `echo` command is used to create the header line of our table.
 >
->The second `echo` command should append a new line at each iteration
+>The second `echo` command should append a new line at each iteration.
+>
+> Note the use of the -e flag which enables interpretation of backslash escapes (`\t` = `Tab`)
+
+You can now visualize our summary table inside the `shell_scripting/results` directory.
+
+BTW: Congratulations!!!
+
+You have completed Module 1.
+
+Hope you had fun learning bash.
+
+
+
+
 
