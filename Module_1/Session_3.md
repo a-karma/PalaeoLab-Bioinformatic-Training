@@ -286,4 +286,4 @@ The command above extracts the 4th field from our file, sorts this column alphab
 > - Define a new variable called FILE_WITH_PATH
 > - Assigning to this variable the output of `locate` using command substitution
 > - Add the `cut` command to your script using this new variable
-> - call the script passing `forgotten_file_loc.txt` as the first argument to print on screen the categories  
+> - Call the script passing `forgotten_file_loc.txt` as the first argument to print on screen the categories  
