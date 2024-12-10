@@ -309,9 +309,9 @@ Given that we need to repeat this strategy multiple times we might want to use a
 
 > Exercise 4
 >
-> Create a new script called `bed_file_parser_v2.sh` (see below).
+> Create a new script called `bed_file_parser_v2.sh`.
 >
-> Complete the loop structure by filling the `<gap>`
+> Complete the loop structure by filling the `<gap>` (see below).
 
 ```sh
  #!/bin/bash
@@ -328,9 +328,9 @@ We are getting very close to our final goal. We just need to output our table. T
 
 > Exercise 5
 >
-> Create a new script called `bed_file_parser_v3.sh` (see below).
+> Create a new script called `bed_file_parser_v3.sh`.
 >
-> Complete the loop structure by filling the `<gap>`
+> Complete the loop structure by filling the `<gap>` (see below).
 >
 > Call this script using the right arguments
 
