@@ -245,7 +245,7 @@ The `GTF` and the `BED` format are both TAB-separated files used to store genomi
 2. start of feature (0 based coordinate; see link to UCSC below)
 3. end of the feature 
 
-Other fields (4th, 5th, etc.) are free form (as long as they are tab separated) - these can be used to store any information you may want, e.g. the name of the interval. For more information about this widely use format refer to the UCSC website [here](https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
+Other fields (4th, 5th, etc.) are free form (as long as they are tab separated) - these can be used to store any information you may want, e.g. the name of the interval. For more information about this widely use format refer to the UCSC website [here](https://genome.ucsc.edu/FAQ/FAQformat.html#format1).
 
 Although in principles we could manually edit these files using standard text editors this becomes very unpractical when dealing with very large files.
 A more efficient option would be combinig command line tools (like `sed`, `awk`, or `grep`) but performing complex tasks using only these tools is not straightforward and often require a good basis understanding of unix. Luckly for us, bioinformaticians have created various software specifically designed to manipulate these file formats. 
