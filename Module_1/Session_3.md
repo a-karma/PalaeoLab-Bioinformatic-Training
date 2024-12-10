@@ -36,6 +36,8 @@ cat arg_tester.sh
 ```
 The comand above will output on screen the content of the script called `arg_tester.sh` which looks like this:
 ```sh
+#!/bin/bash
+
 echo "Username: $1"
 echo "Age: $2"
 echo "Status: $3"
@@ -50,7 +52,7 @@ Username: Jason
 Age: 27
 Status: phd student
 ```
-This is because the each `echo` command will process a different argument in the order that they have been passed to our script at the call. Note that because our third argument consisted of two words separated by a space we had to enclose them in quotes.
+This is because each `echo` command will process a different argument in the order that they have been passed to our script at the call. Note that because our third argument consisted of two words separated by a space we had to use quotes to ensure that both words are interpreted as a single argument.
 
 #### Modularity
 A script will make use of the building blocks of programming such as conditionals and loops to make decisions and automate a series of tasks.
@@ -77,8 +79,53 @@ function_name(){
 <insert code here>
 }
 ```
+Input data can be passed to the function as arguments directly after calling the function in your script. As for scripts, arguments are accessible inside the function as `$1`, `$2`, etc. according to the order in which they are passed to the function at its call. Let's have a look at a simple script in which we have declared and used a function:
+
+```sh
+cat funct_tester.sh
+``` 
+The comand above will output on screen the content of the script called `funct_tester.sh` which looks like this:
+
+```sh
+#!/bin/bash
+
+FILE_INPUT1="long_text.txt"
+FILE_INPUT2="short_text.txt"
+
+line_counter(){
+number_of_lines=$(cat $1 | wc -l)
+echo "The file you chose is called $1"
+echo "This file has $number_of_lines lines"
+}
+
+line_counter $FILE_INPUT1
+line_counter $FILE_INPUT2
+```
+Before examining the function itself, let's have a look at the general structure of the script:
+
+- We first define two variables (`FILE_INPUT1` and `FILE_INPUT2`).
+- Then we declare our function called `line_counter`.
+- Finally we called the function twice, each time passing to the function a different argument (`$FILE_INPUT1` at the first call and `$FILE_INPUT2` at the second call)
+
+Now let's look at the function body *i.e.* the code enclosed in curly brackets which consists of three lines:
+- Line 1 defines the variable `number_of_lines`
+- Line 2 consists of a command (`echo`) in which we use the first argument that needs to be provided to the function at its call (`$1`)
+- Line 3 consists of a command (`echo`) in which we use the value of the variable defined on the first line ($number_of_lines lines)
 
 
+
+
+If we want to test our script on two previously created filed termed `long_text.txt` and `short_text.txt` we need to run:
+```sh
+bash funct_tester.sh
+```
+and its output on screen will look like this:
+```sh
+The file you chose is called long_text.txt
+This file has 54 lines
+The file you chose is called short_text.txt
+This file has 5 lines
+```
 ### 2. Shell Scripting - Example
 Before we start, let's run some preliminary commads to create the directory structure for this session:
 
