@@ -280,8 +280,9 @@ The command above extracts the 4th field from our file, sorts this column alphab
 
 > Exercise 3
 >
-> Rename the script `file_finder.sh` as `bed_file_finder.sh`
+> Make a copy of the script `file_finder.sh` and call it `bed_file_parser.sh`
 >
-> Modify the script by defining a variable and assigning to it the output of `locate` using command substitution
->
-> Add the `cut` command to our script, make sure  
+> Modify `bed_file_parser.sh` as follows:
+> - Define a new variable called FILE_WITH_PATH
+> - Assigning to this variable the output of `locate` using command substitution
+> - Add the `cut` command to your script using this new variable to print on screen the categories  
