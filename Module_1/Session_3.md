@@ -110,7 +110,7 @@ Before examining the function itself, let's have a look at the general structure
 
 Now let's look at the function body *i.e.* the code enclosed in curly brackets which consists of three lines:
 - Line 1 defines the variable `number_of_lines`
-- Line 2 consists of a command (`echo`) in which we use the first argument that needs to be provided to the function at its call (`$1`)
+- Line 2 consists of a command (`echo`) in which we use the first (and only) argument provided to the function at its call (`$1`)
 - Line 3 consists of a command (`echo`) in which we use the value of the variable defined on the first line ($number_of_lines lines)
 
 
