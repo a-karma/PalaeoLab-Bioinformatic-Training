@@ -283,10 +283,10 @@ The command above extracts the 4th field from our file, sorts this column alphab
 > Make a copy of the script `file_finder.sh` and call it `bed_file_parser_v1.sh`
 >
 > Modify `bed_file_parser_v1.sh` as follows:
-> - Define a new variable called FILE_WITH_PATH
-> - Assigning to this variable the output of `locate` using command substitution
-> - Add the `cut` command to your script using this new variable
-> - Call the script passing `forgotten_file_loc.txt` as the first argument to print on screen the categories
+> - Define a new variable called FILE_WITH_PATH.
+> - Assigning to this variable the output of `locate` using command substitution.
+> - Add the `cut` command to your script using this new variable.
+> - Call the script passing `forgotten_file_loc.txt` as the first argument to print on screen the categories.
 
 Now that we have our list of category we would like to use it count for each category how many entry we find in our bed file. Finally we would like to create an output file containing a table with two columns: category and number of entries. Let's have a look at the current version of our script:
 ```sh
