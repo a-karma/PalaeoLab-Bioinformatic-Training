@@ -270,7 +270,7 @@ which will output on screen the file location *i.e.* its path.
 >
 > This script should use the command `locate` to print on screen the path of the file passed as argument at its call.
 
-Let's inspect the content of this file (use `less`,`head` or `cat` to visualizze it). As you can see, this looks like a bed file (see Session_2) with the three canonical fields (chromosome, starting coordinate, ending coordinate) plus an additional fourth field that assign each feature to a given category. 
+Let's inspect the content of this file (use `less`,`head` or `cat` to visualizze it). As you can see, this looks like a bed file (see Session_2) with the three canonical fields (chromosome, starting coordinate, ending coordinate) plus an additional fourth field assigning each feature to a given category. 
 
 The first thing we would like to do is to check how many categories we have. To do so we can run the following command:
 ```sh
