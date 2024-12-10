@@ -353,7 +353,9 @@ cat ./fasta/ptw_prom_sequences.fa | head -1
 > by excluding CDS and all regions that are 5 kb from the start and the stop codon of each CDS.
 
 
-If you want to keep playing with bedtools have a look at this tutorial here: https://sandbox.bio/tutorials?id=bedtools-intro
+That's all we got but if you want to keep playing with bedtools have a look at this tutorial here: 
+
+https://sandbox.bio/tutorials?id=bedtools-intro
 
 
 
