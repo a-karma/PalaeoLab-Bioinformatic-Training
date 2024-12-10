@@ -354,7 +354,9 @@ done
 >
 >The second `echo` command should append a new line at each iteration.
 >
-> Note the use of the `-e` flag which enables interpretation of backslash escapes (`\t` = `Tab`)
+>Note the difference between redirecting the stdoutput to a file (`>`) and appending the content of stdoutput to an existing file (`>>`). 
+>
+>Note also the use of the `-e` flag which enables interpretation of backslash escapes (`\t` = `Tab`)
 
 You can now visualize our summary table inside the `shell_scripting/results` directory.
 
