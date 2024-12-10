@@ -276,7 +276,7 @@ The first thing we would like to do is to check how many categories we have. To 
 ```sh
 cut -f4 file_name_with_path | sort | uniq
 ```
-The command above consists of three different commands joint together using pipes (`|`) to process the same stream of data. Specifically, it extracts the 4th field from our tab separated file, it sorts this column alphabetically and then it returns a list of unique elements on screen.
+The line above consists of three different commands joint together using pipes (`|`) to process the same stream of data. Specifically, it extracts the 4th field from our tab separated file, it sorts this column alphabetically and then it returns a list of unique elements on screen.
 
 > Exercise 3
 >
