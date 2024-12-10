@@ -270,5 +270,18 @@ which will output on screen the file location *i.e.* its path.
 >
 > This script should use the command `locate` to print on screen the path of the file passed as argument at its call.
 
-Let's inspect the content of this file (use `less` or `cat` to visualizze it).
-As you can see, it contains 
+Let's inspect the content of this file (use `less`,`head` or `cat` to visualizze it). As you can see, this looks like a bed file (see Session_2) with the three canonical fields (chromosome, starting coordinate, ending coordinate) plus an additional fourth field that assign each feature to a given category. 
+
+The first thing we would like to do is to check how many categories we have. To do so we can run the following command:
+```sh
+cut -f4 file_name_with_path | sort | uniq
+```
+The command above extracts the 4th field from our file, sorts this column alphabetically and then returns a list of unique elements on screen.
+
+> Exercise 3
+>
+> Rename the script `file_finder.sh` as `bed_file_finder.sh`
+>
+> Modify the script by defining a variable and assigning to it the output of `locate` using command substitution
+>
+> Add the `cut` command to our script, make sure  
