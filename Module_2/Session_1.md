@@ -1,5 +1,11 @@
 ![bio_logo](../IM/header.png)
 
+Now that you have familiarised yourself with the command line it's time for you to learn more about genomic analysis and bioinformatics. 
+
+For the rest of the course we will focus on babirusa (Babyrousa spp.) a forest-dependent mammal species endemic to the Wallacea archipelago. We will use this toy dataset as our case study to process and analyse real genomic data obtained from different individuals.  
+
+![babirusa_map](../IM/babirusa_day2.png)
+
 ## Module 2 - NGS data processing - Session 1
 In this session you will learn how to process genomic data generated with high-throughput sequencing technologies.
 
@@ -29,8 +35,6 @@ ls ~/module2/raw_data/
 ```
 
 In your `raw_data` folder you should now see 8 files with the `.fastq` extension. These are the results of pair-end sequencing on Illumina HiSeq X platform of 4 babirusa individuals (one from each region of Sulawesi plus the Togean Islands as shown on the map). We are now going to familiarise with this file format and then evaluate the quality of these sequencing results.
-
-![babirusa_map](../IM/babirusa_day2.png)
 
 #### Fastq format
 Genomic information from high-throughput sequencing are stored in text-based files called
