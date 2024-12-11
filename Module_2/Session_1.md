@@ -1,8 +1,6 @@
 ![bio_logo](../IM/header.png)
 
-Now that you have familiarised yourself with the command line it's time for you to learn more about genomic analysis and bioinformatics. 
-
-For the rest of the course we will focus on babirusa (Babyrousa spp.) a forest-dependent mammal species endemic to the Wallacea archipelago. We will use this toy dataset as our case study to process and analyse real genomic data obtained from different individuals.  
+Now that you have familiarised yourself with the command line it's time for you to learn more about genomic analysis and bioinformatics. For the rest of the course we will focus on babirusa (Babyrousa spp.) a forest-dependent mammal species endemic to the Wallacea archipelago. We will use this toy dataset as our case study to process and analyse real genomic data obtained from different individuals.  
 
 ![babirusa_map](../IM/babirusa_day2.png)
 
