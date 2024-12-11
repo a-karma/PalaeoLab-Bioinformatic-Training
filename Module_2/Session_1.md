@@ -136,7 +136,7 @@ Lets run `fastqc` on our own data, shall we?
 
 The command to run fastqc is straightforward:
 ```sh
-fastqc -t 1 ~/day2/raw_data/sub_RD56_1.fastq -o qc
+fastqc -t 1 ~/module2/raw_data/sub_RD56_1.fastq -o qc
 ```
 where `-t 1` corresponds to the number of threads used for the analysis, and `-o qc` corresponds to the output directory where the program will store the report.
 
@@ -157,7 +157,7 @@ done < ./lists/fastq_list.txt
 We could also run this without a list of files as: 
 
 ```sh
-for i in ~/day2/raw_data/*.fastq
+for i in ~/module2/raw_data/*.fastq
 do
 fastqc -t 1 $i -o qc
 done
@@ -165,7 +165,7 @@ done
 Once completed, use either the PSFTP app or the sftp command to transfer the .html files to your local computer and visualise them in your web-browser.
 After establishing the sftp connection you can run:
 ```sh
-cd ~/day2/qc/
+cd ~/module2/qc/
 lcd path/to/download/folder
 get *.html
 ```
@@ -212,11 +212,11 @@ In this case is feasible because we are only dealing with 4 samples but imagine 
 
 First of all let's create a file in our `script` directory
 ```sh
-touch ~/day2/scripts/remove_adapters.sh
+touch ~/module2/scripts/remove_adapters.sh
 ```
 Then, we should transform this into an executable:
 ```sh
-chmod 770 ~/day2/scripts/remove_adapters.sh
+chmod 770 ~/module2/scripts/remove_adapters.sh
 ```
 
 Now let's edit this file using nano: 
@@ -256,7 +256,7 @@ We can now modify our script and assign to the last variable the `correct` value
 INPUT1=$1
 INPUT2=$2
 OUTPUT=$(basename $1)
-AdapterRemoval --file1 ${INPUT1} --file2 ${INPUT2} --basename ~/day2/fastqs/${OUTPUT} --trimns --trimqualities
+AdapterRemoval --file1 ${INPUT1} --file2 ${INPUT2} --basename ~/module2/fastqs/${OUTPUT} --trimns --trimqualities
 ```
 At this stage, the usage of this script should be:
 
@@ -279,7 +279,7 @@ We can use a little trick to adjust this. Let's modify our script for the last t
 INPUT1=$1
 INPUT2=$2
 OUTPUT=$(echo `basename ${INPUT1}` | sed 's/_1.fastq//')
-AdapterRemoval --file1 ${INPUT1} --file2 ${INPUT2} --basename ~/day2/fastqs/${OUTPUT} --trimns --trimqualities
+AdapterRemoval --file1 ${INPUT1} --file2 ${INPUT2} --basename ~/module2/fastqs/${OUTPUT} --trimns --trimqualities
 ```
 
 > `Exercise 2`
@@ -291,13 +291,13 @@ We are now finally ready to run the `adapteremoval` step for all our sample.
 We are going to use the same stratagy we have employed for the quality control step i.e. the while loop.
 First of all let's remove our experiments with the naming by running:
 ```sh
-rm -R ~/day2/fastqs; mkdir ~/day2/fastqs
+rm -R ~/module2/fastqs; mkdir ~/module2/fastqs
 ```
 Then we need to prepare our list. This time we want two files (along with their path) per line. We can easily do this using a combination of `ls` and `paste`
 ```sh
-ls ~/day2/raw_data/*_1.fastq > ~/day2/lists/read1_list.txt
-ls ~/day2/raw_data/*_2.fastq > ~/day2/lists/read2_list.txt
-paste ~/day2/lists/read1_list.txt ~/day2/lists/read2_list.txt > ~/day2/lists/adrm_list.txt
+ls ~/module2/raw_data/*_1.fastq > ~/module2/lists/read1_list.txt
+ls ~/module2/raw_data/*_2.fastq > ~/module2/lists/read2_list.txt
+paste ~/module2/lists/read1_list.txt ~/module2/lists/read2_list.txt > ~/module2/lists/adrm_list.txt
 ```
 Now that we have our list we have completed our while loop structure:
 
@@ -305,7 +305,7 @@ Now that we have our list we have completed our while loop structure:
 while read -r line
 do
 ???
-done<~/day2/lists/adrm_list.txt
+done<~/module2/lists/adrm_list.txt
 ```
 > `Exercise 3`
 >
