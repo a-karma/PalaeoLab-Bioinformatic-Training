@@ -87,7 +87,7 @@ tabix -p vcf ~/module2/vcfs/babirusa.chr10.1to2mb.vcf.gz
 ```
 Then we can concatenate the two by running:
 ```sh
- vcf-concat ~/module2/vcfs/babirusa.chr10.0to1mb.vcf.gz ~/module2/vcfs/babirusa.chr10.1to2mb.vcf.gz | bgzip -c > ~/module2/vcfs/babirusa.chr10.0to2mb.vcf.gz
+vcf-concat ~/module2/vcfs/babirusa.chr10.0to1mb.vcf.gz ~/module2/vcfs/babirusa.chr10.1to2mb.vcf.gz | bgzip -c > ~/module2/vcfs/babirusa.chr10.0to2mb.vcf.gz
 ```
 
 We will lear a lot more about vcfs and genetic diversity tomorrow.
