@@ -22,7 +22,7 @@ You should now be in the `~/module2/` directory, run `ls -lh` to ensure that all
 Let's now create a symbolik link to the directory containing the input data for the tutorial:
 
 ```sh
-ln -s /home/DATA/Module2/ ./raw_data
+ln -s /home/DATA/module_2/ ./raw_data
 ```
 
 Finally, we need to activate the conda environment to access all software we will need:
